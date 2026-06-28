@@ -31,19 +31,20 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 <meta name="twitter:description" content="The resume and full work history of Luke Erickson — founder of Startup Ventura." />
 <meta name="twitter:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
 
-<link rel="preload" as="font" type="font/woff2" href="assets/fonts/newsreader-300.woff2" crossorigin />
-<link rel="preload" as="font" type="font/woff2" href="assets/fonts/hanken-grotesk-400.woff2" crossorigin />
-<link rel="preload" as="style" href="assets/css/styles.css" />
-<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/newsreader-300.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/hanken-grotesk-400.woff2" crossorigin />
+<link rel="preload" as="style" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/styles.css" />
 
-<link rel="icon" type="image/svg+xml" href="assets/logo/LE-monogram.svg" />
-<link rel="apple-touch-icon" href="assets/og/apple-touch-icon.png" />
-<link rel="manifest" href="site.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="/assets/logo/LE-monogram.svg" />
+<link rel="apple-touch-icon" href="/assets/og/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://lukeerickson.com/#luke",
   "name": "Luke Erickson",
   "jobTitle": "Founder and Executive Director",
   "worksFor": {
@@ -60,6 +61,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   "hasOccupation": { "@type": "Occupation", "name": "Entrepreneur" },
   "knowsAbout": ["entrepreneurship", "startups", "economic development", "business development", "go-to-market strategy", "fundraising", "community building", "public speaking"],
   "knowsLanguage": ["English", "German"],
+  "award": "Rookie Rotarian of the Year, Rotary Club of Ventura (2025)",
   "image": "https://lukeerickson.com/assets/og/luke-erickson-og.jpg",
   "url": "https://lukeerickson.com/",
   "mainEntityOfPage": "https://lukeerickson.com/resume",
@@ -150,7 +152,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
             </div>
           </div>
           <div class="resume-hero__actions">
-            <a class="ds-btn ds-btn--primary ds-btn--lg" href="assets/luke-erickson-resume.pdf" download>
+            <a class="ds-btn ds-btn--primary ds-btn--lg" href="/assets/luke-erickson-resume.pdf" download>
               Download resume <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></span>
             </a>
             <a class="ds-btn ds-btn--link" href="/">Back to lukeerickson.com <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
@@ -268,11 +270,18 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
                 <span class="ds-tag ds-tag--neutral">German</span>
               </div>
             </div>
+            <div class="skills__group">
+              <span class="skills__label">Recognition &amp; service</span>
+              <div style="display:flex;flex-direction:column;gap:7px;color:var(--text-secondary);font-size:15px;line-height:1.5">
+                <span>Rookie Rotarian of the Year &mdash; Rotary Club of Ventura (2025)</span>
+                <span>Board of Directors &mdash; <a class="ds-link" href="https://newwestsymphony.org/about/board/" target="_blank" rel="noopener">New West Symphony</a></span>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="xp__more">
-          <a class="ds-btn ds-btn--primary" href="assets/luke-erickson-resume.pdf" download>Download resume (PDF) <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></span></a>
+          <a class="ds-btn ds-btn--primary" href="/assets/luke-erickson-resume.pdf" download>Download resume (PDF) <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></span></a>
         </div>
       </div>
     </section>
@@ -306,6 +315,6 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   </div>
 </div>
 
-<script src="assets/js/main.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>

@@ -31,7 +31,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 <meta name="twitter:description" content="From Hudson, Wisconsin to founding Startup Ventura — Luke Erickson's story." />
 <meta name="twitter:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
 
-<link rel="preload" as="image" href="/assets/img/luke-erickson-hero.jpg" fetchpriority="high" />
+<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/luke-erickson-hero-480.avif 480w, /assets/img/luke-erickson-hero-720.avif 720w, /assets/img/luke-erickson-hero-960.avif 960w" imagesizes="340px" fetchpriority="high" />
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/newsreader-300.woff2" crossorigin />
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/hanken-grotesk-400.woff2" crossorigin />
 <link rel="preload" as="style" href="/assets/css/styles.css" />
@@ -75,6 +75,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
       "hasOccupation": { "@type": "Occupation", "name": "Entrepreneur" },
       "knowsAbout": ["entrepreneurship", "startups", "economic development", "business development", "go-to-market strategy", "fundraising", "community building", "public speaking"],
       "knowsLanguage": ["English", "German"],
+      "award": "Rookie Rotarian of the Year, Rotary Club of Ventura (2025)",
       "image": "https://lukeerickson.com/assets/og/luke-erickson-og.jpg",
       "url": "https://lukeerickson.com/",
       "mainEntityOfPage": "https://lukeerickson.com/about/me",
@@ -141,7 +142,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
           <a class="nav-link" href="/about/me" aria-current="page">My story</a>
           <a class="nav-link" href="/#experience">Experience</a>
           <a class="nav-link" href="/#moments">Moments</a>
-          <a class="nav-link" href="/resume.html">Resume</a>
+          <a class="nav-link" href="/resume">Resume</a>
         </div>
         <button class="ds-iconbtn" id="themeToggle" type="button" aria-label="Switch theme">
           <svg class="icon" id="themeIcon" aria-hidden="true"><use href="#i-sun"/></svg>
@@ -164,7 +165,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
         <h1 class="ds-display story__title">Luke Erickson</h1>
         <p class="ds-prose story__dek">The long way from a small town in Wisconsin to building a startup community on the California coast — and what I learned about building anything in between.</p>
 
-        <img class="story__hero" src="/assets/img/luke-erickson-hero.jpg" width="960" height="1200" alt="Luke Erickson" fetchpriority="high" />
+        <picture><source type="image/avif" srcset="/assets/img/luke-erickson-hero-480.avif 480w, /assets/img/luke-erickson-hero-720.avif 720w, /assets/img/luke-erickson-hero-960.avif 960w" sizes="340px"><source type="image/webp" srcset="/assets/img/luke-erickson-hero-480.webp 480w, /assets/img/luke-erickson-hero-720.webp 720w, /assets/img/luke-erickson-hero-960.webp 960w" sizes="340px"><img class="story__hero" src="/assets/img/luke-erickson-hero.jpg" width="960" height="1200" alt="Luke Erickson" fetchpriority="high" /></picture>
 
         <div class="story__body ds-prose">
           <h2>Hudson, Wisconsin</h2>
@@ -201,7 +202,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
           </div>
         </div>
 
-        <p class="story__back"><a class="ds-btn ds-btn--link" href="/resume.html">See the full r&eacute;sum&eacute; <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></p>
+        <p class="story__back"><a class="ds-btn ds-btn--link" href="/resume">See the full r&eacute;sum&eacute; <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></p>
       </div>
     </article>
   </main>
@@ -220,7 +221,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
           <a href="/about/me">My story</a>
           <a href="/#experience">Experience</a>
           <a href="/#moments">Moments</a>
-          <a href="/resume.html">Resume</a>
+          <a href="/resume">Resume</a>
           <a href="/#contact">Contact</a>
         </nav>
         <div class="footer__meta">

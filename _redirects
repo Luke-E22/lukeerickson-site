@@ -1,7 +1,6 @@
-# Serve the résumé at the clean, name-rich URL /resume (matches the canonical tag).
-# Netlify & Cloudflare Pages read this file.
-/resume     /resume.html     200
-/resume/    /resume.html     200
+# /resume is served by resume/index.html (clean, name-rich URL = the canonical).
+# Redirect the legacy .html URL so there is only one indexable résumé URL.
+/resume.html   /resume   301!
 
 # NOTE: domain-level redirects (www -> apex, and luke-erickson.com -> lukeerickson.com)
 # are handled by the host's "primary domain" setting — see README "Going live".

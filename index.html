@@ -36,7 +36,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 <meta name="twitter:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
 
 <!-- Preload above-the-fold assets -->
-<link rel="preload" as="image" href="assets/img/luke-erickson-hero.jpg" fetchpriority="high" />
+<link rel="preload" as="image" type="image/avif" imagesrcset="assets/img/luke-erickson-hero-480.avif 480w, assets/img/luke-erickson-hero-720.avif 720w, assets/img/luke-erickson-hero-960.avif 960w" imagesizes="(max-width:880px) 340px, 440px" fetchpriority="high" />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/newsreader-300.woff2" crossorigin />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/hanken-grotesk-400.woff2" crossorigin />
 <link rel="preload" as="style" href="assets/css/styles.css" />
@@ -51,6 +51,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://lukeerickson.com/#luke",
   "name": "Luke Erickson",
   "jobTitle": "Founder and Executive Director",
   "worksFor": {
@@ -67,6 +68,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   "hasOccupation": { "@type": "Occupation", "name": "Entrepreneur" },
   "knowsAbout": ["entrepreneurship", "startups", "economic development", "business development", "go-to-market strategy", "fundraising", "community building", "public speaking"],
   "knowsLanguage": ["English", "German"],
+  "award": "Rookie Rotarian of the Year, Rotary Club of Ventura (2025)",
   "image": "https://lukeerickson.com/assets/og/luke-erickson-og.jpg",
   "url": "https://lukeerickson.com/",
   "mainEntityOfPage": "https://lukeerickson.com/",
@@ -144,7 +146,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
           <a class="nav-link" href="/about/me">My story</a>
           <a class="nav-link" href="#experience">Experience</a>
           <a class="nav-link" href="#moments">Moments</a>
-          <a class="nav-link" href="resume.html">Resume</a>
+          <a class="nav-link" href="/resume">Resume</a>
         </div>
         <button class="ds-iconbtn" id="themeToggle" type="button" aria-label="Switch theme">
           <svg class="icon" id="themeIcon" aria-hidden="true"><use href="#i-sun"/></svg>
@@ -173,7 +175,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
             </div>
           </div>
           <div class="hero__media" id="heroMedia">
-            <img class="hero__photo" src="assets/img/luke-erickson-hero.jpg" width="960" height="1200" alt="Luke Erickson, founder and executive director of Startup Ventura" fetchpriority="high" />
+            <picture><source type="image/avif" srcset="assets/img/luke-erickson-hero-480.avif 480w, assets/img/luke-erickson-hero-720.avif 720w, assets/img/luke-erickson-hero-960.avif 960w" sizes="(max-width:880px) 340px, 440px"><source type="image/webp" srcset="assets/img/luke-erickson-hero-480.webp 480w, assets/img/luke-erickson-hero-720.webp 720w, assets/img/luke-erickson-hero-960.webp 960w" sizes="(max-width:880px) 340px, 440px"><img class="hero__photo" src="assets/img/luke-erickson-hero.jpg" width="960" height="1200" alt="Luke Erickson, founder and executive director of Startup Ventura" fetchpriority="high" /></picture>
             <div class="ds-card ds-card--glass hero__chip" id="heroChip">
               <span class="hero__chip-dot" aria-hidden="true"></span> Available for advising
             </div>
@@ -188,7 +190,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 
         <div class="hero__stats">
           <div class="ds-stat"><span class="ds-stat__num">2025</span><span class="ds-stat__label">Founded Startup Ventura</span></div>
-          <div class="ds-stat"><span class="ds-stat__num">$3B<em>+</em></span><span class="ds-stat__label">Board exit value assembled</span></div>
+          <div class="ds-stat"><span class="ds-stat__num">$3B<em>+</em></span><span class="ds-stat__label">In my board members' prior exits</span></div>
           <div class="ds-stat"><span class="ds-stat__num">10<em>+</em></span><span class="ds-stat__label">Years building &amp; selling</span></div>
         </div>
 
@@ -214,7 +216,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
     <section class="section" id="about">
       <div class="container">
         <div class="about__grid">
-          <img class="about__photo reveal" src="assets/img/luke-erickson-about.jpg" width="788" height="985" alt="Luke Erickson" loading="lazy" decoding="async" />
+          <picture><source type="image/avif" srcset="assets/img/luke-erickson-about-400.avif 400w, assets/img/luke-erickson-about-760.avif 760w" sizes="(max-width:880px) 360px, 460px"><source type="image/webp" srcset="assets/img/luke-erickson-about-400.webp 400w, assets/img/luke-erickson-about-760.webp 760w" sizes="(max-width:880px) 360px, 460px"><img class="about__photo reveal" src="assets/img/luke-erickson-about.jpg" width="788" height="985" alt="Luke Erickson" loading="lazy" decoding="async" /></picture>
           <div class="about__body">
             <span class="ds-eyebrow ds-eyebrow--line">About</span>
             <h2 class="ds-display" style="font-size:var(--text-display-md);max-width:16ch">Building in the open, for people at the very start.</h2>
@@ -255,18 +257,6 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
             </div>
           </li>
           <li class="xp__item">
-            <div class="xp__tile" aria-hidden="true"><svg class="icon"><use href="#i-rocket"/></svg></div>
-            <div class="xp__body">
-              <div class="xp__head">
-                <h3 class="xp__role">Founder &amp; Chief Executive Officer</h3>
-                <span class="xp__dates">2022 — Mar 2025</span>
-              </div>
-              <div class="xp__org">One Tap Inc. <span class="xp__loc">· Los Angeles, California</span></div>
-              <p class="xp__desc">Founded and led a digital financial-literacy platform from idea to a working business. I owned product direction, partnerships, and growth, and signed the early contracts and relationships that gave the company its footing.</p>
-              <div class="xp__tags"><span class="ds-tag ds-tag--neutral ds-tag--sm">Founder</span><span class="ds-tag ds-tag--neutral ds-tag--sm">Fintech</span></div>
-            </div>
-          </li>
-          <li class="xp__item">
             <div class="xp__tile" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></div>
             <div class="xp__body">
               <div class="xp__head">
@@ -278,9 +268,21 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
               <div class="xp__tags"><span class="ds-tag ds-tag--coral ds-tag--sm">Go-to-market</span><span class="ds-tag ds-tag--neutral ds-tag--sm">Sales leadership</span></div>
             </div>
           </li>
+          <li class="xp__item">
+            <div class="xp__tile" aria-hidden="true"><svg class="icon"><use href="#i-rocket"/></svg></div>
+            <div class="xp__body">
+              <div class="xp__head">
+                <h3 class="xp__role">Founder &amp; Chief Executive Officer</h3>
+                <span class="xp__dates">2022 — Mar 2025</span>
+              </div>
+              <div class="xp__org">One Tap Inc. <span class="xp__loc">· Los Angeles, California</span></div>
+              <p class="xp__desc">Founded and led a digital financial-literacy platform from idea to a working business. I owned product direction, partnerships, and growth, and signed the early contracts and relationships that gave the company its footing.</p>
+              <div class="xp__tags"><span class="ds-tag ds-tag--neutral ds-tag--sm">Founder</span><span class="ds-tag ds-tag--neutral ds-tag--sm">Fintech</span></div>
+            </div>
+          </li>
         </ol>
         <div class="xp__more">
-          <a class="ds-btn ds-btn--link" href="resume.html">View the full r&eacute;sum&eacute; <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+          <a class="ds-btn ds-btn--link" href="/resume">View the full r&eacute;sum&eacute; <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
         </div>
       </div>
     </section>
@@ -302,18 +304,18 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
           <h2 class="ds-display" style="font-size:var(--text-display-md)">A few moments along the way.</h2>
         </div>
         <div class="gallery reveal">
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-popl-nasdaq.jpg" width="665" height="1182" alt="Luke Erickson at Nasdaq, Times Square" loading="lazy" decoding="async" /><figcaption class="gallery__cap">Popl's global rebrand · Nasdaq, Times Square</figcaption></figure>
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-grant-cardone.jpg" width="960" height="1200" alt="Luke Erickson with Grant Cardone" loading="lazy" decoding="async" /><figcaption class="gallery__cap">With Grant Cardone</figcaption></figure>
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-speaking.jpg" width="800" height="1200" alt="Luke Erickson speaking" loading="lazy" decoding="async" /><figcaption class="gallery__cap">On the mic</figcaption></figure>
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-new-west-symphony.jpg" width="1200" height="900" alt="Luke Erickson at a New West Symphony gala" loading="lazy" decoding="async" /><figcaption class="gallery__cap">New West Symphony gala</figcaption></figure>
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-forbes-la-tech-week.jpg" width="900" height="1200" alt="Luke Erickson at LA Tech Week" loading="lazy" decoding="async" /><figcaption class="gallery__cap">Forbes 30 Under 30 · LA Tech Week</figcaption></figure>
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-capitol-hill.jpg" width="900" height="1200" alt="Luke Erickson on Capitol Hill, Washington, D.C." loading="lazy" decoding="async" /><figcaption class="gallery__cap">On Capitol Hill · Washington, D.C.</figcaption></figure>
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-ces-las-vegas.jpg" width="768" height="1024" alt="Luke Erickson at CES, Las Vegas" loading="lazy" decoding="async" /><figcaption class="gallery__cap">CES · Las Vegas</figcaption></figure>
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-leadership-institute.jpg" width="1086" height="724" alt="Luke Erickson at the Leadership Institute, Washington, D.C." loading="lazy" decoding="async" /><figcaption class="gallery__cap">Leadership Institute · Washington, D.C.</figcaption></figure>
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-rotary.jpg" width="768" height="1024" alt="Luke Erickson at Rotary Club of Ventura" loading="lazy" decoding="async" /><figcaption class="gallery__cap">Rookie Rotarian of the Year · 2025</figcaption></figure>
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-outdoors.jpg" width="1200" height="1200" alt="Luke Erickson outdoors" loading="lazy" decoding="async" /><figcaption class="gallery__cap">Off the clock</figcaption></figure>
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-spacex.jpg" width="768" height="1024" alt="Luke Erickson at SpaceX, Hawthorne" loading="lazy" decoding="async" /><figcaption class="gallery__cap">SpaceX · Hawthorne</figcaption></figure>
-          <figure class="gallery__item" tabindex="0"><img src="assets/img/gallery/luke-erickson-spartan-race.jpg" width="799" height="1200" alt="Luke Erickson at a Spartan Race, Angel Stadium" loading="lazy" decoding="async" /><figcaption class="gallery__cap">Spartan Race · Angel Stadium</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-popl-nasdaq-400.avif 400w, assets/img/gallery/luke-erickson-popl-nasdaq-665.avif 665w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-popl-nasdaq-400.webp 400w, assets/img/gallery/luke-erickson-popl-nasdaq-665.webp 665w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-popl-nasdaq.jpg" width="665" height="1182" alt="Luke Erickson at Nasdaq, Times Square" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Popl's global rebrand · Nasdaq, Times Square</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-grant-cardone-400.avif 400w, assets/img/gallery/luke-erickson-grant-cardone-800.avif 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-grant-cardone-400.webp 400w, assets/img/gallery/luke-erickson-grant-cardone-800.webp 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-grant-cardone.jpg" width="960" height="1200" alt="Luke Erickson with Grant Cardone" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">With Grant Cardone</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-speaking-400.avif 400w, assets/img/gallery/luke-erickson-speaking-800.avif 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-speaking-400.webp 400w, assets/img/gallery/luke-erickson-speaking-800.webp 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-speaking.jpg" width="800" height="1200" alt="Luke Erickson speaking" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">On the mic</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-new-west-symphony-400.avif 400w, assets/img/gallery/luke-erickson-new-west-symphony-800.avif 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-new-west-symphony-400.webp 400w, assets/img/gallery/luke-erickson-new-west-symphony-800.webp 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-new-west-symphony.jpg" width="1200" height="900" alt="Luke Erickson at a New West Symphony gala" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">New West Symphony gala</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-forbes-la-tech-week-400.avif 400w, assets/img/gallery/luke-erickson-forbes-la-tech-week-800.avif 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-forbes-la-tech-week-400.webp 400w, assets/img/gallery/luke-erickson-forbes-la-tech-week-800.webp 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-forbes-la-tech-week.jpg" width="900" height="1200" alt="Luke Erickson at LA Tech Week" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Forbes 30 Under 30 Summit · LA Tech Week</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-capitol-hill-400.avif 400w, assets/img/gallery/luke-erickson-capitol-hill-800.avif 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-capitol-hill-400.webp 400w, assets/img/gallery/luke-erickson-capitol-hill-800.webp 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-capitol-hill.jpg" width="900" height="1200" alt="Luke Erickson on Capitol Hill, Washington, D.C." loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">On Capitol Hill · Washington, D.C.</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-ces-las-vegas-400.avif 400w, assets/img/gallery/luke-erickson-ces-las-vegas-768.avif 768w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-ces-las-vegas-400.webp 400w, assets/img/gallery/luke-erickson-ces-las-vegas-768.webp 768w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-ces-las-vegas.jpg" width="768" height="1024" alt="Luke Erickson at CES, Las Vegas" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">CES · Las Vegas</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-leadership-institute-400.avif 400w, assets/img/gallery/luke-erickson-leadership-institute-800.avif 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-leadership-institute-400.webp 400w, assets/img/gallery/luke-erickson-leadership-institute-800.webp 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-leadership-institute.jpg" width="1086" height="724" alt="Luke Erickson at the Leadership Institute, Washington, D.C." loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Leadership Institute · Washington, D.C.</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-rotary-400.avif 400w, assets/img/gallery/luke-erickson-rotary-768.avif 768w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-rotary-400.webp 400w, assets/img/gallery/luke-erickson-rotary-768.webp 768w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-rotary.jpg" width="768" height="1024" alt="Luke Erickson at Rotary Club of Ventura" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Rookie Rotarian of the Year · 2025</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-outdoors-400.avif 400w, assets/img/gallery/luke-erickson-outdoors-800.avif 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-outdoors-400.webp 400w, assets/img/gallery/luke-erickson-outdoors-800.webp 800w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-outdoors.jpg" width="1200" height="1200" alt="Luke Erickson outdoors" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Off the clock</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-spacex-400.avif 400w, assets/img/gallery/luke-erickson-spacex-768.avif 768w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-spacex-400.webp 400w, assets/img/gallery/luke-erickson-spacex-768.webp 768w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-spacex.jpg" width="768" height="1024" alt="Luke Erickson at SpaceX, Hawthorne" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">SpaceX · Hawthorne</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="assets/img/gallery/luke-erickson-spartan-race-400.avif 400w, assets/img/gallery/luke-erickson-spartan-race-799.avif 799w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="assets/img/gallery/luke-erickson-spartan-race-400.webp 400w, assets/img/gallery/luke-erickson-spartan-race-799.webp 799w" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw"><img src="assets/img/gallery/luke-erickson-spartan-race.jpg" width="799" height="1200" alt="Luke Erickson at a Spartan Race, Angel Stadium" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Spartan Race · Angel Stadium</figcaption></figure>
         </div>
       </div>
     </section>
@@ -324,9 +326,11 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
         <div class="contact__grid">
           <div class="contact__copy">
             <span class="ds-eyebrow ds-eyebrow--line">Get in touch</span>
-            <h2 class="ds-display" style="font-size:var(--text-display-md);max-width:14ch">Tell me what you are building.</h2>
-            <p class="ds-prose" style="max-width:46ch">I read every note. If you are starting something in Ventura County or beyond, I would love to hear about it.</p>
-            <form class="contact__form" id="contactForm" action="[PLACEHOLDER: form endpoint URL]" method="POST" novalidate>
+            <h2 class="ds-display" style="font-size:var(--text-display-md);max-width:15ch">Tell me what you're working on.</h2>
+            <p class="ds-prose" style="max-width:48ch">I read every note. Whether you're starting a company, looking for an advisor or a speaker, building in Ventura County, or exploring a way to work together, I'd love to hear from you.</p>
+            <form class="contact__form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="visually-hidden" aria-hidden="true"><label>Leave this field empty if you are human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
               <div class="ds-field">
                 <label class="ds-field__label" for="c-name">Name</label>
                 <input class="ds-input" id="c-name" name="name" type="text" placeholder="Your name" required autocomplete="name" />
@@ -387,7 +391,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
           <a href="/about/me">My story</a>
           <a href="#experience">Experience</a>
           <a href="#moments">Moments</a>
-          <a href="resume.html">Resume</a>
+          <a href="/resume">Resume</a>
           <a href="#contact">Contact</a>
         </nav>
         <div class="footer__meta">

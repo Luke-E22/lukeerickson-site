@@ -63,7 +63,7 @@
     var el = document.getElementById(id);
     if (!el) return;
     e.preventDefault();
-    var y = el.getBoundingClientRect().top + (window.scrollY || 0) - 72;
+    var y = el.getBoundingClientRect().top + (window.scrollY || 0) - 80;
     window.scrollTo({ top: Math.max(0, y), behavior: prefersReduced() ? 'auto' : 'smooth' });
   });
 
@@ -178,17 +178,14 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      var endpoint = form.getAttribute('action') || '';
       var reveal = function () {
         form.hidden = true;
         if (success) { success.hidden = false; success.setAttribute('role', 'status'); }
       };
-      if (endpoint && endpoint.indexOf('PLACEHOLDER') === -1 && /^https?:/i.test(endpoint)) {
-        fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-          .then(reveal).catch(reveal);
-      } else {
-        reveal(); // no endpoint configured yet — show confirmation locally
-      }
+      // Netlify Forms: POST the URL-encoded form (incl. the hidden form-name) to the site root.
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+        .then(reveal).catch(reveal);
     });
   }
 })();
