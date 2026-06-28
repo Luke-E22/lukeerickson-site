@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# logs / temp
+*.log
+.build/
+node_modules/
+
+# host tooling
+.netlify/
