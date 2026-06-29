@@ -182,10 +182,19 @@
         form.hidden = true;
         if (success) { success.hidden = false; success.setAttribute('role', 'status'); }
       };
-      // Netlify Forms: POST the URL-encoded form (incl. the hidden form-name) to the site root.
+      var val = function (n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value : ''; };
+      var emailFallback = function () {
+        // Netlify Forms isn't active — open a pre-filled email to Luke so the note still reaches him.
+        var subject = encodeURIComponent('Message from ' + (val('name') || 'your website'));
+        var bodyTxt = encodeURIComponent((val('message') || '') + '\n\n— ' + (val('name') || '') + (val('email') ? ' <' + val('email') + '>' : ''));
+        window.location.href = 'mailto:lukeericksonwork@gmail.com?subject=' + subject + '&body=' + bodyTxt;
+        reveal();
+      };
+      // Try Netlify Forms first; fall back to an email to Luke if it isn't active.
       var body = new URLSearchParams(new FormData(form)).toString();
       fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
-        .then(reveal).catch(reveal);
+        .then(function (res) { if (res && res.ok) { reveal(); } else { emailFallback(); } })
+        .catch(emailFallback);
     });
   }
 })();
