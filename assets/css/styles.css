@@ -290,6 +290,7 @@ picture{display:contents;}
 .contact__line{display:flex;align-items:flex-start;gap:12px;color:var(--text-secondary);font-size:15px;line-height:1.45;}
 .contact__line .icon{width:20px;height:20px;flex:none;margin-top:1px;color:var(--accent-blue-ink);}
 .contact__socials{display:flex;gap:10px;}
+[hidden]{display:none!important;}
 .contact__success{display:flex;gap:14px;align-items:center;}
 .contact__success .icon{width:28px;height:28px;color:var(--accent-blue-ink);}
 
