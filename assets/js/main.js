@@ -186,15 +186,16 @@
       };
       var val = function (n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value : ''; };
       var emailFallback = function () {
-        // Netlify Forms isn't active — open a pre-filled email to Luke so the note still reaches him.
+        // Formspree isn't wired yet — open a pre-filled email to Luke so the note still reaches him.
         var subject = encodeURIComponent('Message from ' + (val('name') || 'your website'));
         var bodyTxt = encodeURIComponent((val('message') || '') + '\n\n— ' + (val('name') || '') + (val('email') ? ' <' + val('email') + '>' : ''));
         window.location.href = 'mailto:lukeericksonwork@gmail.com?subject=' + subject + '&body=' + bodyTxt;
         reveal();
       };
-      // Try Netlify Forms first; fall back to an email to Luke if it isn't active.
-      var body = new URLSearchParams(new FormData(form)).toString();
-      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+      // Submit to Formspree; until a real form ID is set, send straight to email.
+      var endpoint = form.getAttribute('action') || '';
+      if (!endpoint || endpoint.indexOf('YOUR_FORM_ID') !== -1) { emailFallback(); return; }
+      fetch(endpoint, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
         .then(function (res) { if (res && res.ok) { reveal(); } else { emailFallback(); } })
         .catch(emailFallback);
     });
