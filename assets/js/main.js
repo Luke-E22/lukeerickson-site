@@ -10,6 +10,7 @@
   var mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   var prefersReduced = function () { return mqReduced.matches; };
   var motion = function () { return root.getAttribute('data-motion') || 'rich'; };
+  var track = function (name, params) { try { if (window.gtag) { window.gtag('event', name, params || {}); } } catch (e) {} };
 
   /* ---------- current year ---------- */
   var yearEl = document.getElementById('year');
@@ -178,6 +179,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      track('contact_submit');
       var reveal = function () {
         form.hidden = true;
         if (success) { success.hidden = false; success.setAttribute('role', 'status'); }
@@ -197,4 +199,60 @@
         .catch(emailFallback);
     });
   }
+
+  /* ---------- GA4 events: résumé downloads, outbound + social clicks ---------- */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (/\.pdf(\?|$)/i.test(href)) { track('resume_download', { file: href }); return; }
+    if (/^mailto:/i.test(href)) { track('contact_click', { method: 'email' }); return; }
+    if (/^https?:\/\//i.test(href) && href.indexOf(location.host) === -1) {
+      track('outbound_click', { link_url: href, link_text: (a.getAttribute('aria-label') || a.textContent || '').trim().slice(0, 60) });
+    }
+  });
+
+  /* ---------- Gallery lightbox ---------- */
+  (function () {
+    var items = document.querySelectorAll('.gallery__item');
+    if (!items.length) return;
+    var box = document.createElement('div');
+    box.className = 'lightbox';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-hidden', 'true');
+    box.innerHTML = '<button class="lightbox__close" type="button" aria-label="Close">&times;</button>' +
+      '<figure class="lightbox__fig"><img class="lightbox__img" alt="" /><figcaption class="lightbox__cap"></figcaption></figure>';
+    document.body.appendChild(box);
+    var imgEl = box.querySelector('.lightbox__img');
+    var capEl = box.querySelector('.lightbox__cap');
+    var closeBtn = box.querySelector('.lightbox__close');
+    var lastFocus = null;
+    function openBox(fig) {
+      var i = fig.querySelector('img'); if (!i) return;
+      var c = fig.querySelector('figcaption');
+      imgEl.src = i.getAttribute('src') || i.currentSrc;
+      imgEl.alt = i.getAttribute('alt') || '';
+      capEl.textContent = c ? c.textContent : '';
+      lastFocus = fig;
+      box.classList.add('is-open');
+      box.setAttribute('aria-hidden', 'false');
+      document.documentElement.style.overflow = 'hidden';
+      closeBtn.focus();
+      track('gallery_view', { image: imgEl.src });
+    }
+    function closeBox() {
+      box.classList.remove('is-open');
+      box.setAttribute('aria-hidden', 'true');
+      document.documentElement.style.overflow = '';
+      imgEl.src = '';
+      if (lastFocus) lastFocus.focus();
+    }
+    items.forEach(function (fig) {
+      fig.addEventListener('click', function () { openBox(fig); });
+      fig.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openBox(fig); } });
+    });
+    box.addEventListener('click', function (e) { if (e.target === box || e.target === closeBtn) closeBox(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && box.classList.contains('is-open')) closeBox(); });
+  })();
 })();
