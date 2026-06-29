@@ -340,6 +340,26 @@ picture{display:contents;}
 .story__cta{display:flex;align-items:center;justify-content:space-between;gap:clamp(20px,4vw,40px);flex-wrap:wrap;margin-top:clamp(48px,6vw,72px);padding:clamp(28px,4vw,40px);}
 .story__cta-actions{display:flex;flex-direction:column;gap:16px;align-items:flex-start;}
 .story__back{margin-top:clamp(28px,4vw,40px);}
+.story__credo{margin:clamp(36px,5vw,56px) 0 0;padding-left:22px;border-left:3px solid var(--accent-coral);}
+.story__credo blockquote{font-family:var(--font-display);font-weight:var(--fw-display-book);font-style:italic;font-size:clamp(1.3rem,1.1rem + 1vw,1.85rem);line-height:1.3;color:var(--text-primary);margin:0;}
+.story__credo cite{display:block;margin-top:12px;font-style:normal;font-family:var(--font-sans);font-size:13px;letter-spacing:.04em;color:var(--text-muted);}
+
+/* ============================ STARTUP VENTURA SECTION ============================ */
+.sv-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,56px);align-items:start;}
+.sv-card{display:flex;flex-direction:column;gap:24px;}
+.sv-card__title{font-family:var(--font-sans);font-weight:var(--fw-semibold);font-size:var(--text-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--accent-blue-ink);margin:0 0 12px;}
+.sv-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.sv-list li{position:relative;padding-left:22px;color:var(--text-secondary);font-size:15.5px;line-height:1.45;}
+.sv-list li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--accent-coral);}
+.sv-card__vision{margin:0;color:var(--text-secondary);font-size:15.5px;line-height:1.55;}
+@media (max-width:760px){.sv-grid{grid-template-columns:1fr;}}
+
+/* ============================ TESTIMONIAL QUOTES ============================ */
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);}
+.quote{margin:0;display:flex;flex-direction:column;}
+.quote__text{font-size:clamp(1.2rem,1rem + .8vw,1.6rem);line-height:1.42;font-style:italic;font-weight:var(--fw-display-book);color:var(--text-primary);margin:0;letter-spacing:0;}
+.quote__by{margin-top:18px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);font-weight:var(--fw-semibold);}
+@media (max-width:760px){.quotes{grid-template-columns:1fr;gap:34px;}}
 
 /* ============================ REVEAL / MOTION ============================ */
 .reveal-armed .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
