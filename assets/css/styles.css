@@ -401,6 +401,18 @@ picture{display:contents;}
 .faq__a{padding:0 clamp(20px,3vw,26px) 22px;color:var(--text-secondary);font-size:var(--text-body);line-height:1.65;}
 .faq__a p{margin:0;max-width:64ch;}
 
+/* ============================ PRESS ============================ */
+.press{max-width:880px;margin:0 auto;}
+.press__card{margin-top:22px;padding:clamp(26px,4vw,44px);border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface);box-shadow:var(--shadow-sm);position:relative;overflow:hidden;}
+.press__card::before{content:"";position:absolute;top:0;left:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--blue-500),var(--coral-500));}
+.press__outlet{font-family:var(--font-sans);font-size:var(--text-eyebrow);letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin-bottom:12px;}
+.press__headline{font-size:var(--text-display-md);margin:0 0 16px;max-width:24ch;}
+.press__headline-link{color:var(--text-primary);text-decoration:none;transition:color .2s ease;}
+.press__headline-link:hover{color:var(--accent-blue-ink);}
+.press__quote{color:var(--text-secondary);font-size:var(--text-body-lg);line-height:1.6;max-width:60ch;margin:0 0 20px;}
+.press__meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.press__date{font-size:var(--text-caption);color:var(--text-muted);}
+
 /* ============================ REVEAL / MOTION ============================ */
 .reveal-armed .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
 .reveal-armed .reveal.is-visible{opacity:1;transform:none;}
