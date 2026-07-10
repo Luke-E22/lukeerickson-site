@@ -10,7 +10,8 @@
   var mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   var prefersReduced = function () { return mqReduced.matches; };
   var motion = function () { return root.getAttribute('data-motion') || 'rich'; };
-  var track = function (name, params) { try { if (window.gtag) { window.gtag('event', name, params || {}); } } catch (e) {} };
+  /* NOTE: keep this name unique — a marquee element below is also a local `var track`. */
+  var gaTrack = function (name, params) { try { if (window.gtag) { window.gtag('event', name, params || {}); } } catch (e) {} };
 
   /* ---------- current year ---------- */
   var yearEl = document.getElementById('year');
@@ -179,7 +180,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      track('contact_submit');
+      gaTrack('contact_submit');
       var reveal = function () {
         form.hidden = true;
         if (success) { success.hidden = false; success.setAttribute('role', 'status'); }
@@ -206,10 +207,10 @@
     var a = e.target.closest('a');
     if (!a) return;
     var href = a.getAttribute('href') || '';
-    if (/\.pdf(\?|$)/i.test(href)) { track('resume_download', { file: href }); return; }
-    if (/^mailto:/i.test(href)) { track('contact_click', { method: 'email' }); return; }
+    if (/\.pdf(\?|$)/i.test(href)) { gaTrack('resume_download', { file: href }); return; }
+    if (/^mailto:/i.test(href)) { gaTrack('contact_click', { method: 'email' }); return; }
     if (/^https?:\/\//i.test(href) && href.indexOf(location.host) === -1) {
-      track('outbound_click', { link_url: href, link_text: (a.getAttribute('aria-label') || a.textContent || '').trim().slice(0, 60) });
+      gaTrack('outbound_click', { link_url: href, link_text: (a.getAttribute('aria-label') || a.textContent || '').trim().slice(0, 60) });
     }
   });
 
@@ -240,7 +241,7 @@
       box.setAttribute('aria-hidden', 'false');
       document.documentElement.style.overflow = 'hidden';
       closeBtn.focus();
-      track('gallery_view', { image: imgEl.src });
+      gaTrack('gallery_view', { image: imgEl.src });
     }
     function closeBox() {
       box.classList.remove('is-open');
