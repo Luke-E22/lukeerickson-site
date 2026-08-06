@@ -18,7 +18,10 @@ resume.html             Full virtual résumé (all roles, education, skills)
 about/me/index.html     "My Story" — long-form narrative bio, served at /about/me
                         (ProfilePage + Person + BreadcrumbList JSON-LD)
 assets/
-  css/styles.css        The full design system + page styles (one file)
+  css/styles.css        The full design system + page styles (one file).
+                        ⚠ The CSS is INLINED into each page for performance:
+                        after editing styles.css, run  python3 tools/inline-css.py
+                        to re-inject it into index.html, resume/, and about/me/.
   js/main.js            Motion + interactions (vanilla): clouds, parallax, reveals,
                         marquee, theme toggle, 3-level motion setting, contact form
   fonts/*.woff2         Self-hosted Newsreader + Hanken Grotesk (font-display: swap)
