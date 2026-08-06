@@ -441,6 +441,7 @@ picture{display:contents;}
 @media (max-width:880px){
   .hero__grid,.about__grid,.contact__grid{grid-template-columns:1fr;}
   .hero__media{justify-self:start;max-width:340px;order:-1;margin-bottom:18px;}
+  .hero__chip{position:static;margin:14px 0 2px;}
   .hero__copy{max-width:none;}
   .about__photo{max-width:360px;}
   .resume-hero__grid{grid-template-columns:1fr;align-items:start;}
