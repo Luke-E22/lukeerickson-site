@@ -444,7 +444,14 @@ picture{display:contents;}
 .faq__a p{margin:0;max-width:64ch;}
 
 /* ============================ PRESS ============================ */
-.press{max-width:880px;margin:0 auto;}
+.press{max-width:1080px;margin:0 auto;}
+.press__grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;align-items:stretch;}
+@media (max-width:880px){.press__grid{grid-template-columns:1fr;}}
+.press__grid .press__card{margin-top:0;display:flex;flex-direction:column;}
+.press__grid .press__headline{font-size:var(--text-h3);max-width:none;}
+.press__grid .press__meta{margin-top:auto;}
+.press__player{margin:0 0 20px;}
+.press__player iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;border-radius:12px;background:var(--color-surface-sunken);}
 .press__card{margin-top:22px;padding:clamp(26px,4vw,44px);border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface);box-shadow:var(--shadow-sm);position:relative;overflow:hidden;}
 .press__card::before{content:"";position:absolute;top:0;left:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--blue-500),var(--coral-500));}
 .press__outlet{font-family:var(--font-sans);font-size:var(--text-eyebrow);letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin-bottom:12px;}
@@ -549,6 +556,13 @@ picture{display:contents;}
       "datePublished": "2026-07-08",
       "publisher": { "@type": "Organization", "name": "Los Angeles Wire", "url": "https://lawire.com" },
       "author": { "@type": "Person", "name": "Ethan Rogers" }
+    },
+    {
+      "@type": "PodcastEpisode",
+      "name": "Is Ventura Becoming The Next Silicon Valley? (with Luke Erickson)",
+      "url": "https://open.spotify.com/episode/2ukvJkEWd2yvsWrbD0j6oQ",
+      "datePublished": "2026-08-07",
+      "partOfSeries": { "@type": "PodcastSeries", "name": "Joe Knows Ventura" }
     }
   ]
 }
@@ -721,13 +735,24 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
       <div class="container">
         <div class="press reveal">
           <span class="ds-eyebrow ds-eyebrow--line">As featured in</span>
-          <div class="press__card">
-            <div class="press__outlet">Los Angeles Wire</div>
-            <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">Bringing Reagan&rsquo;s story to life through a historic symphony under Air&nbsp;Force&nbsp;One.</a></h2>
-            <p class="press__quote">&ldquo;America 250 is about celebrating what we have built together. We set out to unite people around our shared values and history, in a place where you can truly feel the American spirit.&rdquo;</p>
-            <div class="press__meta">
-              <a class="ds-btn ds-btn--link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">Read the article <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-              <span class="press__date">By Ethan Rogers &middot; July 2026</span>
+          <div class="press__grid">
+            <div class="press__card">
+              <div class="press__outlet">Los Angeles Wire</div>
+              <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">Bringing Reagan&rsquo;s story to life through a historic symphony under Air&nbsp;Force&nbsp;One.</a></h2>
+              <p class="press__quote">&ldquo;America 250 is about celebrating what we have built together. We set out to unite people around our shared values and history, in a place where you can truly feel the American spirit.&rdquo;</p>
+              <div class="press__meta">
+                <a class="ds-btn ds-btn--link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">Read the article <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+                <span class="press__date">By Ethan Rogers &middot; July 2026</span>
+              </div>
+            </div>
+            <div class="press__card">
+              <div class="press__outlet">Joe Knows Ventura &middot; Podcast</div>
+              <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://open.spotify.com/episode/2ukvJkEWd2yvsWrbD0j6oQ" target="_blank" rel="noopener">Is Ventura becoming the next Silicon&nbsp;Valley?</a></h2>
+              <div class="press__player"><iframe title="Spotify: Is Ventura Becoming The Next Silicon Valley? (with Luke Erickson)" src="https://open.spotify.com/embed/episode/2ukvJkEWd2yvsWrbD0j6oQ/video?utm_source=generator&amp;theme=0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+              <div class="press__meta">
+                <a class="ds-btn ds-btn--link" href="https://open.spotify.com/episode/2ukvJkEWd2yvsWrbD0j6oQ" target="_blank" rel="noopener">Listen on Spotify <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+                <span class="press__date">August 2026</span>
+              </div>
             </div>
           </div>
         </div>
