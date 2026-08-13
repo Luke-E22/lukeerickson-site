@@ -11,7 +11,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 <style>html[data-theme="dark"]{background:#181D24}html[data-theme="light"]{background:#F7F9FC}</style>
 
 <title>Luke Erickson — Resume &amp; Experience</title>
-<meta name="description" content="The resume and full work history of Luke Erickson — founder and executive director of Startup Ventura, entrepreneur, and business-development leader in Ventura, California." />
+<meta name="description" content="The resume and full work history of Luke Erickson — founder and executive director of Startup Ventura in Ventura County, California." />
 <link rel="canonical" href="https://lukeerickson.com/resume" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="author" content="Luke Erickson" />
@@ -25,6 +25,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 <meta property="og:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Luke Erickson" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Luke Erickson — Resume &amp; Experience" />
 <meta name="twitter:description" content="The resume and full work history of Luke Erickson — founder of Startup Ventura." />
@@ -561,6 +562,19 @@ picture{display:contents;}
 }
 </script>
 
+<!-- Structured data: breadcrumb trail -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://lukeerickson.com/resume#breadcrumb",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lukeerickson.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Resume", "item": "https://lukeerickson.com/resume" }
+  ]
+}
+</script>
+
 <!-- Google Analytics (GA4) -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -798,6 +812,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <a href="/#moments">Moments</a>
           <a href="/">Home</a>
           <a href="/#contact">Contact</a>
+          <a href="/privacy">Privacy</a>
         </nav>
         <div class="footer__meta">
           <button class="motion-toggle" id="motionToggle" type="button" aria-label="Change motion level">Motion: rich</button>

@@ -14,7 +14,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PAGES = ["index.html", "resume/index.html", "about/me/index.html"]
+PAGES = ["index.html", "resume/index.html", "about/me/index.html", "404.html", "privacy/index.html"]
 
 css = (ROOT / "assets/css/styles.css").read_text()
 css = css.replace("url('../fonts/", "url('/assets/fonts/")
