@@ -28,7 +28,8 @@ assets/
   img/                  Descriptively named, name-bearing photos (luke-erickson-*.jpg)
   og/                   1200×630 Open Graph image + PWA/apple-touch icons
   logo/                 LE monogram SVGs
-  luke-erickson-resume.pdf   Branded, downloadable résumé (generated to match the page)
+  luke-erickson-resume.pdf   Branded, downloadable résumé — regenerate with
+                             python3 tools/build-resume-pdf.py (source: tools/resume-print.html)
 robots.txt  sitemap.xml  site.webmanifest  _redirects
 ```
 
