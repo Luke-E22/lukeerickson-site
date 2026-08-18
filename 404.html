@@ -267,6 +267,15 @@ picture{display:contents;}
 .marquee:hover .marquee__track,.marquee:focus-within .marquee__track{animation-play-state:paused;}
 .marquee__item{font-family:var(--font-display);font-weight:var(--fw-display-book);font-size:clamp(1.05rem,.9rem + .6vw,1.45rem);color:var(--text-muted);white-space:nowrap;letter-spacing:.01em;}
 .marquee__dot{width:5px;height:5px;border-radius:50%;background:var(--accent-coral);opacity:.7;flex:none;}
+/* Logo variant: white-silhouette PNGs (alpha = shape), tinted per theme via filter */
+.marquee__track--logos{list-style:none;margin:0;padding:0;gap:clamp(34px,5vw,64px);}
+.marquee__logo{flex:none;display:flex;align-items:center;}
+.marquee__logo img{display:block;height:clamp(30px,2.8vw,40px);width:auto;opacity:.88;transition:opacity .25s ease;}
+[data-theme="dark"] .marquee__logo img{filter:brightness(0) invert(.86) sepia(.05) saturate(.5);}
+[data-theme="light"] .marquee__logo img{filter:brightness(0) invert(.38) sepia(.12) saturate(.7);}
+.marquee__logo:hover img{opacity:1;}
+/* Square marks (One Tap, Rotary, Utah) read small at cap-height; give them a touch more */
+.marquee__logo img[alt="One Tap"],.marquee__logo img[alt="Rotary Club of Ventura"],.marquee__logo img[alt="University of Utah"]{height:clamp(38px,3.6vw,50px);}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* ============================ ABOUT ============================ */

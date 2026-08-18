@@ -127,8 +127,17 @@
   /* ---------- marquee: duplicate track for a seamless loop ---------- */
   var track = document.getElementById('marqueeTrack');
   if (track && !track.dataset.cloned) {
-    var html = track.innerHTML;
-    track.innerHTML = html + html;
+    // Clone once for the seamless loop; hide the copies from assistive tech
+    // so logos aren't announced twice. When the marquee is stopped and
+    // wraps (calm/still/reduced-motion), applyMotion() removes the clones.
+    var originals = Array.prototype.slice.call(track.children);
+    originals.forEach(function (node) {
+      var c = node.cloneNode(true);
+      c.setAttribute('aria-hidden', 'true');
+      c.setAttribute('data-clone', '1');
+      Array.prototype.forEach.call(c.querySelectorAll('img'), function (im) { im.alt = ''; });
+      track.appendChild(c);
+    });
     track.dataset.cloned = '1';
   }
 
@@ -153,6 +162,10 @@
     }
     // reveals — rich + calm
     if ((m === 'rich' || m === 'calm')) armReveals(); else disarmReveals();
+    // marquee clones — only needed while it scrolls (rich); hide when it wraps
+    if (track) {
+      Array.prototype.forEach.call(track.querySelectorAll('[data-clone]'), function (c) { c.hidden = (m !== 'rich'); });
+    }
   }
 
   /* ---------- motion toggle (rich -> calm -> still) ---------- */
