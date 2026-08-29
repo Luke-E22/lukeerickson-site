@@ -11,10 +11,25 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 </script>
 <style>html[data-theme="dark"]{background:#181D24}html[data-theme="light"]{background:#F7F9FC}</style>
 
-<title>Page not found &mdash; Luke Erickson</title>
-<meta name="description" content="That page doesn't exist on lukeerickson.com. Head to the home page, the resume, or Luke's story." />
+<title>Press &amp; Media Kit &mdash; Luke Erickson</title>
+<meta name="description" content="Press kit for Luke Erickson, founder and executive director of Startup Ventura: boilerplate bios, downloadable headshots, fast facts, and recent coverage." />
+<link rel="canonical" href="https://lukeerickson.com/press" />
+<meta name="robots" content="index, follow" />
 <meta name="author" content="Luke Erickson" />
 <meta name="theme-color" content="#181D24" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Luke Erickson" />
+<meta property="og:title" content="Press &amp; Media Kit &mdash; Luke Erickson" />
+<meta property="og:description" content="Bios, headshots, facts, and coverage for media." />
+<meta property="og:url" content="https://lukeerickson.com/press" />
+<meta property="og:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Luke Erickson" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Press &amp; Media Kit &mdash; Luke Erickson" />
+<meta name="twitter:description" content="Bios, headshots, facts, and coverage for media." />
+<meta name="twitter:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
 <link rel="icon" type="image/svg+xml" href="/assets/logo/LE-monogram.svg" />
 <link rel="apple-touch-icon" href="/assets/og/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
@@ -530,6 +545,29 @@ gtag('js',new Date());gtag('config','G-3V09P7HYEL');
 if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventListener('load',function(){setTimeout(go,1200);});}
 ['pointerdown','keydown','touchstart','scroll'].forEach(function(e){window.addEventListener(e,go,{once:true,passive:true});});})();
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://lukeerickson.com/press",
+      "url": "https://lukeerickson.com/press",
+      "name": "Luke Erickson — Press & Media Kit",
+      "about": { "@id": "https://lukeerickson.com/#luke" },
+      "breadcrumb": { "@id": "https://lukeerickson.com/press#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lukeerickson.com/press#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lukeerickson.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Press kit", "item": "https://lukeerickson.com/press" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -541,6 +579,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
 <symbol id="i-mail" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></symbol>
 <symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol>
 <symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol>
+<symbol id="i-download" viewBox="0 0 256 256"><path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"/></symbol>
 </defs></svg>
 
 <div class="ds-sky">
@@ -564,8 +603,6 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
       <nav class="site-nav" aria-label="Primary">
         <div class="site-nav__links" id="navLinks">
           <a class="nav-link" href="/about/me">My story</a>
-          <a class="nav-link" href="/#experience">Experience</a>
-          <a class="nav-link" href="/#moments">Moments</a>
           <a class="nav-link" href="/speaking">Speaking</a>
           <a class="nav-link" href="/resume">Resume</a>
         </div>
@@ -581,16 +618,94 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
   </header>
 
   <main id="main">
-    <section class="section" style="min-height:62vh;display:flex;align-items:center">
-      <div class="container" style="max-width:720px">
-        <span class="ds-eyebrow ds-eyebrow--line">404 &middot; Page not found</span>
-        <h1 class="ds-display" style="font-size:var(--text-display-lg);margin:14px 0 16px;max-width:16ch">This page took a different path.</h1>
-        <p class="ds-prose" style="max-width:46ch">The address may be old or mistyped. Everything on this site lives one click away:</p>
-        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:26px">
-          <a class="ds-btn ds-btn--primary" href="/">Home <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-          <a class="ds-btn ds-btn--secondary" href="/resume">R&eacute;sum&eacute;</a>
-          <a class="ds-btn ds-btn--secondary" href="/about/me">My story</a>
-          <a class="ds-btn ds-btn--secondary" href="/#contact">Say hello</a>
+    <section class="section">
+      <div class="container" style="max-width:880px">
+        <span class="ds-eyebrow ds-eyebrow--line">Press &amp; media kit</span>
+        <h1 class="ds-display" style="font-size:var(--text-display-lg);margin:14px 0 14px;max-width:18ch">Everything you need to cover Luke.</h1>
+        <p class="ds-prose" style="max-width:54ch">Bios you can paste, photos you can print, and facts you can check. On deadline? Say so in the subject line of your email and it goes to the top of the pile.</p>
+        <div style="margin-top:20px"><a class="ds-btn ds-btn--primary" href="mailto:lukeericksonwork@gmail.com?subject=Media%20inquiry">Media inquiry <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span></a></div>
+
+        <h2 class="ds-display" style="font-size:var(--text-display-md);margin:52px 0 18px">Boilerplate bios</h2>
+        <div class="kit-stack">
+            <div class="ds-card kit-card bio-card">
+              <h3 class="kit-label">Short — about 50 words</h3>
+              <div class="bio-card__text" id="bio-50"><p>Luke Erickson is the founder and executive director of Startup Ventura, a nonprofit startup accelerator serving Ventura County, California. A ten-year sales and go-to-market operator, he previously founded One Tap, a creator-economy fintech, and led business development at Popl. He serves on the board of the New West Symphony.</p></div>
+              <button class="ds-btn ds-btn--secondary ds-btn--sm copy-btn" type="button" data-copy="#bio-50">Copy</button>
+            </div>
+            <div class="ds-card kit-card bio-card">
+              <h3 class="kit-label">Medium — about 100 words</h3>
+              <div class="bio-card__text" id="bio-100"><p>Luke Erickson is the founder and executive director of Startup Ventura, a nonprofit startup accelerator backing early-stage founders in Ventura County, California. Before Startup Ventura, he founded One Tap, a creator-economy financial services company that grew past $1 million in waitlist revenue before its acquisition, and led the business development team at Popl, generating more than $11 million in career sales pipeline. The youngest board member in New West Symphony history, he chaired its America 250 Taskforce and produced the first symphony concert ever held at the Ronald Reagan Presidential Library. He holds a B.S. in Business Management from the University of Utah.</p></div>
+              <button class="ds-btn ds-btn--secondary ds-btn--sm copy-btn" type="button" data-copy="#bio-100">Copy</button>
+            </div>
+            <div class="ds-card kit-card bio-card">
+              <h3 class="kit-label">Long — about 200 words</h3>
+              <div class="bio-card__text" id="bio-200"><p>Luke Erickson is the founder and executive director of Startup Ventura, a 501(c)(3) nonprofit startup accelerator backing early-stage founders in Ventura County, California. He started the organization in 2025, after the City Hall incubator that helped launch companies like The Trade Desk and GiddyUp went away, and has built partnerships spanning the City of Ventura, creator-economy companies like Passes, Fanfix, and Karat Financial, and a board of operators whose companies carry more than $4.5 billion in combined exit value.</p><p>Before Startup Ventura, Erickson founded One Tap, a creator-economy financial services company that grew past $1 million in waitlist revenue before its acquisition, and led the business development team at Popl, an in-person data capture platform, generating more than $11 million in career sales pipeline. Raised in Hudson, Wisconsin, where he ran a small business as a teenager, he holds a B.S. in Business Management from the University of Utah.</p><p>Erickson is the youngest board member in New West Symphony history, chair of its America 250 Taskforce, and producer of the first symphony concert ever held at the Ronald Reagan Presidential Library. The Rotary Club of Ventura named him Rookie Rotarian of the Year. He lives in Ventura, California.</p></div>
+              <button class="ds-btn ds-btn--secondary ds-btn--sm copy-btn" type="button" data-copy="#bio-200">Copy</button>
+            </div>
+        </div>
+
+        <h2 class="ds-display" style="font-size:var(--text-display-md);margin:52px 0 8px">Headshots</h2>
+        <p class="ds-prose" style="max-width:54ch;margin-bottom:18px">Free for editorial use with the credit &ldquo;Courtesy of Luke Erickson.&rdquo;</p>
+        <div class="kit-grid">
+          <div class="ds-card kit-card headshot-card">
+            <img src="/assets/img/luke-erickson-portrait.jpg" width="1200" height="1200" alt="Luke Erickson headshot, square crop" loading="lazy" decoding="async" />
+            <div class="headshot-card__row"><span>Square &middot; 1200&times;1200</span>
+            <a class="ds-btn ds-btn--secondary ds-btn--sm" href="/assets/img/luke-erickson-portrait.jpg" download="luke-erickson-headshot-square.jpg">Download <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></span></a></div>
+          </div>
+          <div class="ds-card kit-card headshot-card">
+            <img src="/assets/img/luke-erickson-hero.jpg" width="960" height="1200" alt="Luke Erickson headshot, vertical crop" loading="lazy" decoding="async" />
+            <div class="headshot-card__row"><span>Vertical &middot; 960&times;1200</span>
+            <a class="ds-btn ds-btn--secondary ds-btn--sm" href="/assets/img/luke-erickson-hero.jpg" download="luke-erickson-headshot-vertical.jpg">Download <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></span></a></div>
+          </div>
+        </div>
+
+        <h2 class="ds-display" style="font-size:var(--text-display-md);margin:52px 0 18px">Fast facts</h2>
+        <div class="ds-card kit-card">
+          <ul class="facts">
+            <li><b>Name</b> Luke Erickson</li>
+            <li><b>Title</b> Founder &amp; Executive Director, Startup Ventura</li>
+            <li><b>Organization</b> Startup Ventura &mdash; a 501(c)(3) nonprofit startup accelerator serving Ventura County, California &middot; <a class="ds-link" href="https://startupventura.com" target="_blank" rel="noopener">startupventura.com</a></li>
+            <li><b>Based in</b> Ventura, California</li>
+            <li><b>From</b> Hudson, Wisconsin</li>
+            <li><b>Born</b> July 22, 2000</li>
+            <li><b>Education</b> B.S., Business Management &mdash; University of Utah (2023)</li>
+            <li><b>Boards &amp; service</b> New West Symphony (youngest-ever board member; chair, America 250 Taskforce) &middot; Rotary Club of Ventura (Rookie Rotarian of the Year)</li>
+            <li><b>Speaks on</b> Startup ecosystems in mid-size cities &middot; go-to-market &middot; in-person selling &middot; event marketing &middot; breaking into tech &mdash; <a class="ds-link" href="/speaking">speaker kit</a></li>
+          </ul>
+        </div>
+
+        <h2 class="ds-display" style="font-size:var(--text-display-md);margin:52px 0 18px">Recent coverage</h2>
+        <ul class="coverage">
+          <li><a class="ds-link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">Los Angeles Wire &mdash; &ldquo;Luke Erickson and Immanuel Portus Bring Reagan&rsquo;s Story to Life Through a Historic Symphony Under Air Force One&rdquo;</a> <span class="coverage__meta">By Ethan Rogers &middot; July 2026</span></li>
+          <li><a class="ds-link" href="https://open.spotify.com/episode/2ukvJkEWd2yvsWrbD0j6oQ" target="_blank" rel="noopener">Joe Knows Ventura (podcast) &mdash; &ldquo;Is Ventura Becoming The Next Silicon Valley? (with Luke Erickson)&rdquo;</a> <span class="coverage__meta">August 2026</span></li>
+        </ul>
+
+        <h2 class="ds-display" style="font-size:var(--text-display-md);margin:52px 0 8px">Photos from the field</h2>
+        <p class="ds-prose" style="max-width:54ch;margin-bottom:18px">Editorial use with credit &ldquo;Courtesy of Luke Erickson.&rdquo; Captions provided.</p>
+        <div class="kit-grid kit-grid--three">
+          <div class="ds-card kit-card headshot-card">
+            <img src="/assets/img/gallery/luke-erickson-popl-nasdaq.jpg" width="665" height="1182" alt="Luke Erickson at Nasdaq, Times Square" loading="lazy" decoding="async" />
+            <div class="headshot-card__row"><span>Popl&rsquo;s global rebrand at Nasdaq, Times Square</span>
+            <a class="ds-btn ds-btn--secondary ds-btn--sm" href="/assets/img/gallery/luke-erickson-popl-nasdaq.jpg" download>Download</a></div>
+          </div>
+          <div class="ds-card kit-card headshot-card">
+            <img src="/assets/img/gallery/luke-erickson-new-west-symphony.jpg" width="1200" height="900" alt="Luke Erickson at a New West Symphony gala" loading="lazy" decoding="async" />
+            <div class="headshot-card__row"><span>New West Symphony gala</span>
+            <a class="ds-btn ds-btn--secondary ds-btn--sm" href="/assets/img/gallery/luke-erickson-new-west-symphony.jpg" download>Download</a></div>
+          </div>
+          <div class="ds-card kit-card headshot-card">
+            <img src="/assets/img/gallery/luke-erickson-speaking.jpg" width="800" height="1200" alt="Luke Erickson speaking on stage" loading="lazy" decoding="async" />
+            <div class="headshot-card__row"><span>On the mic</span>
+            <a class="ds-btn ds-btn--secondary ds-btn--sm" href="/assets/img/gallery/luke-erickson-speaking.jpg" download>Download</a></div>
+          </div>
+        </div>
+
+        <div class="ds-card kit-card" style="margin-top:52px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
+          <div>
+            <div style="font-weight:600;color:var(--text-primary)">Need something that isn't here?</div>
+            <div style="font-size:14px;color:var(--text-secondary)">Different photo, a quote, background on Startup Ventura &mdash; just ask.</div>
+          </div>
+          <a class="ds-btn ds-btn--primary" href="mailto:lukeericksonwork@gmail.com?subject=Media%20inquiry">lukeericksonwork@gmail.com</a>
         </div>
       </div>
     </section>
@@ -601,18 +716,17 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
     <div class="container">
       <div class="footer__row">
         <a class="ds-wordmark" href="/" aria-label="Luke Erickson — home">
-          <svg class="ds-wordmark__mark ds-monogram" viewBox="0 0 120 120" width="32" height="32" role="img" aria-label="LE monogram">
-            <g class="le-e"><rect x="50" y="14" width="20" height="62"/><rect x="50" y="14" width="56" height="18"/><rect x="50" y="37" width="40" height="16"/><rect x="50" y="58" width="56" height="18"/></g>
-            <g class="le-l"><rect x="18" y="14" width="24" height="92"/><rect x="18" y="84" width="88" height="22"/></g>
-          </svg>
-          <span class="ds-wordmark__name">Luke Erickson</span>
-        </a>
+        <svg class="ds-wordmark__mark ds-monogram" viewBox="0 0 120 120" width="32" height="32" role="img" aria-label="LE monogram">
+          <g class="le-e"><rect x="50" y="14" width="20" height="62"/><rect x="50" y="14" width="56" height="18"/><rect x="50" y="37" width="40" height="16"/><rect x="50" y="58" width="56" height="18"/></g>
+          <g class="le-l"><rect x="18" y="14" width="24" height="92"/><rect x="18" y="84" width="88" height="22"/></g>
+        </svg>
+        <span class="ds-wordmark__name">Luke Erickson</span>
+      </a>
         <nav class="footer__nav" aria-label="Footer">
           <a href="/about/me">My story</a>
           <a href="/speaking">Speaking</a>
           <a href="/press">Press kit</a>
           <a href="/resume">Resume</a>
-          <a href="/">Home</a>
           <a href="/#contact">Contact</a>
           <a href="/privacy">Privacy</a>
         </nav>

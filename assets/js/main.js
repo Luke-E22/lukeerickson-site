@@ -215,6 +215,33 @@
     });
   }
 
+  /* ---------- copy-to-clipboard buttons (press/speaking kit) ---------- */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-copy]');
+    if (!btn) return;
+    var src = document.querySelector(btn.getAttribute('data-copy'));
+    if (!src) return;
+    var text = src.innerText.trim();
+    var done = function () {
+      var old = btn.textContent;
+      btn.textContent = 'Copied';
+      gaTrack('bio_copy', { block: btn.getAttribute('data-copy') });
+      setTimeout(function () { btn.textContent = old; }, 1600);
+    };
+    var legacyCopy = function () {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { if (document.execCommand('copy')) done(); } catch (err) {}
+      document.body.removeChild(ta);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, legacyCopy);
+    } else {
+      legacyCopy();
+    }
+  });
+
   /* ---------- GA4 events: résumé downloads, outbound + social clicks ---------- */
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a');
