@@ -486,6 +486,9 @@ picture{display:contents;}
 .coverage{list-style:none;margin:0;padding:0;display:grid;gap:14px;}
 .coverage li{font-size:var(--text-body);line-height:1.55;max-width:70ch;}
 .coverage__meta{display:block;font-size:var(--text-caption);color:var(--text-muted);margin-top:2px;}
+.guide-card{display:flex;flex-direction:column;gap:6px;text-decoration:none;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;}
+.guide-card:hover{border-color:var(--color-border-strong);transform:translateY(-2px);box-shadow:var(--shadow-sm);}
+.guide-card .ds-btn--link{margin-top:auto;align-self:flex-start;}
 .talk__title{margin:0 0 8px;font-family:var(--font-display);font-weight:500;font-size:var(--text-h3);color:var(--text-primary);}
 .talk__abs{margin:0;color:var(--text-secondary);font-size:var(--text-body-sm);line-height:1.65;max-width:66ch;}
 
@@ -604,6 +607,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
         <div class="site-nav__links" id="navLinks">
           <a class="nav-link" href="/about/me">My story</a>
           <a class="nav-link" href="/speaking">Speaking</a>
+          <a class="nav-link" href="/#guides">Guides</a>
           <a class="nav-link" href="/resume">Resume</a>
         </div>
         <button class="ds-iconbtn" id="themeToggle" type="button" aria-label="Switch theme">
@@ -734,6 +738,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
         <nav class="footer__nav" aria-label="Footer">
           <a href="/about/me">My story</a>
           <a href="/speaking">Speaking</a>
+          <a href="/#guides">Guides</a>
           <a href="/press">Press kit</a>
           <a href="/resume">Resume</a>
           <a href="/#contact">Contact</a>

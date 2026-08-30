@@ -490,6 +490,9 @@ picture{display:contents;}
 .coverage{list-style:none;margin:0;padding:0;display:grid;gap:14px;}
 .coverage li{font-size:var(--text-body);line-height:1.55;max-width:70ch;}
 .coverage__meta{display:block;font-size:var(--text-caption);color:var(--text-muted);margin-top:2px;}
+.guide-card{display:flex;flex-direction:column;gap:6px;text-decoration:none;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;}
+.guide-card:hover{border-color:var(--color-border-strong);transform:translateY(-2px);box-shadow:var(--shadow-sm);}
+.guide-card .ds-btn--link{margin-top:auto;align-self:flex-start;}
 .talk__title{margin:0 0 8px;font-family:var(--font-display);font-weight:500;font-size:var(--text-h3);color:var(--text-primary);}
 .talk__abs{margin:0;color:var(--text-secondary);font-size:var(--text-body-sm);line-height:1.65;max-width:66ch;}
 
@@ -697,6 +700,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <a class="nav-link" href="#experience">Experience</a>
           <a class="nav-link" href="#moments">Moments</a>
           <a class="nav-link" href="/speaking">Speaking</a>
+          <a class="nav-link" href="#guides">Guides</a>
           <a class="nav-link" href="/resume">Resume</a>
         </div>
         <button class="ds-iconbtn" id="themeToggle" type="button" aria-label="Switch theme">
@@ -1024,7 +1028,38 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
             <summary class="faq__q">How do I get involved with Startup Ventura?</summary>
             <div class="faq__a"><p>If you&rsquo;re building something, start at <a class="ds-link" href="https://startupventura.com" target="_blank" rel="noopener">startupventura.com</a> &mdash; founders in the accelerator get mentorship, free software and credits, and connections to capital. Mentors and investors who want to help can reach me directly. Not sure where you fit? That&rsquo;s what the coffee is for.</p></div>
           </details>
-          <p style="text-align:center;margin:26px 0 0;font-size:var(--text-body-sm);color:var(--text-muted)">Longer answers: <a class="ds-link" href="/mentorship">startup mentorship in Ventura County</a> &middot; <a class="ds-link" href="/guides/angel-investors-ventura-county">finding angel investors here</a> &middot; <a class="ds-link" href="/guides/start-a-nonprofit-in-your-20s">starting a nonprofit in your 20s</a> &middot; <a class="ds-link" href="/guides/join-a-board-in-your-20s">joining a board in your 20s</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GUIDES ===================== -->
+    <section class="section section--tight" id="guides">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="ds-eyebrow ds-eyebrow--line">Guides</span>
+          <h2 class="ds-display" style="font-size:var(--text-display-md)">Longer answers, written down.</h2>
+        </div>
+        <div class="kit-grid reveal" style="margin-top:26px">
+      <a class="ds-card kit-card guide-card" href="/mentorship">
+            <h3 class="talk__title">Startup mentorship in Ventura County</h3>
+            <p class="talk__abs">How I mentor &mdash; and every free option in the county, honestly listed.</p>
+            <span class="ds-btn ds-btn--link">Read the guide <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
+          </a>
+      <a class="ds-card kit-card guide-card" href="/guides/angel-investors-ventura-county">
+            <h3 class="talk__title">Angel investors in Ventura County</h3>
+            <p class="talk__abs">No directory exists. How founders actually raise here.</p>
+            <span class="ds-btn ds-btn--link">Read the guide <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
+          </a>
+      <a class="ds-card kit-card guide-card" href="/guides/start-a-nonprofit-in-your-20s">
+            <h3 class="talk__title">Start a nonprofit in your 20s</h3>
+            <p class="talk__abs">The playbook from founding Startup Ventura at 24.</p>
+            <span class="ds-btn ds-btn--link">Read the guide <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
+          </a>
+      <a class="ds-card kit-card guide-card" href="/guides/join-a-board-in-your-20s">
+            <h3 class="talk__title">Join a board in your 20s</h3>
+            <p class="talk__abs">From the symphony&rsquo;s youngest-ever board member.</p>
+            <span class="ds-btn ds-btn--link">Read the guide <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
+          </a>
         </div>
       </div>
     </section>
@@ -1102,6 +1137,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <a href="#experience">Experience</a>
           <a href="#moments">Moments</a>
           <a href="/speaking">Speaking</a>
+          <a href="#guides">Guides</a>
           <a href="/press">Press kit</a>
           <a href="/resume">Resume</a>
           <a href="#contact">Contact</a>
