@@ -450,7 +450,7 @@ picture{display:contents;}
 
 /* ============================ PRESS ============================ */
 .press{max-width:1080px;margin:0 auto;}
-.press__grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;align-items:stretch;}
+.press__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-top:22px;align-items:stretch;}
 @media (max-width:880px){.press__grid{grid-template-columns:1fr;}}
 .press__grid .press__card{margin-top:0;display:flex;flex-direction:column;}
 .press__grid .press__headline{font-size:var(--text-h3);max-width:none;}
@@ -689,6 +689,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
 
         <h2 class="ds-display" style="font-size:var(--text-display-md);margin:52px 0 18px">Recent coverage</h2>
         <ul class="coverage">
+          <li><a class="ds-link" href="https://finance.yahoo.com/small-business/articles/luke-erickson-launches-startup-ventura-150200274.html" target="_blank" rel="noopener">Yahoo Finance &mdash; &ldquo;Luke Erickson Launches Startup Ventura to Build a New Home for Technology Founders in Ventura County&rdquo;</a> <span class="coverage__meta">Via TMX Newsfile &middot; August 2026</span></li>
           <li><a class="ds-link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">Los Angeles Wire &mdash; &ldquo;Luke Erickson and Immanuel Portus Bring Reagan&rsquo;s Story to Life Through a Historic Symphony Under Air Force One&rdquo;</a> <span class="coverage__meta">By Ethan Rogers &middot; July 2026</span></li>
           <li><a class="ds-link" href="https://open.spotify.com/episode/2ukvJkEWd2yvsWrbD0j6oQ" target="_blank" rel="noopener">Joe Knows Ventura (podcast) &mdash; &ldquo;Is Ventura Becoming The Next Silicon Valley? (with Luke Erickson)&rdquo;</a> <span class="coverage__meta">August 2026</span></li>
         </ul>
