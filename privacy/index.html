@@ -454,6 +454,14 @@ picture{display:contents;}
 .press__meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
 .press__date{font-size:var(--text-caption);color:var(--text-muted);}
 
+/* ============================ AS-SEEN-IN STRIP (/press) ============================ */
+.seen-row{display:flex;align-items:center;gap:clamp(30px,4.5vw,56px);flex-wrap:wrap;}
+.seen-row img{display:block;height:34px;width:auto;opacity:.85;transition:opacity .25s ease;}
+.seen-row img[alt="Associated Press"]{height:44px;}
+[data-theme="dark"] .seen-row img{filter:brightness(0) invert(.86) sepia(.05) saturate(.5);}
+[data-theme="light"] .seen-row img{filter:brightness(0) invert(.38) sepia(.12) saturate(.7);}
+.seen-row a:hover img{opacity:1;}
+
 /* ============================ KIT PAGES (/press, /speaking) ============================ */
 .kit-stack{display:grid;gap:18px;}
 .kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;}

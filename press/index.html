@@ -467,6 +467,14 @@ picture{display:contents;}
 .press__meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
 .press__date{font-size:var(--text-caption);color:var(--text-muted);}
 
+/* ============================ AS-SEEN-IN STRIP (/press) ============================ */
+.seen-row{display:flex;align-items:center;gap:clamp(30px,4.5vw,56px);flex-wrap:wrap;}
+.seen-row img{display:block;height:34px;width:auto;opacity:.85;transition:opacity .25s ease;}
+.seen-row img[alt="Associated Press"]{height:44px;}
+[data-theme="dark"] .seen-row img{filter:brightness(0) invert(.86) sepia(.05) saturate(.5);}
+[data-theme="light"] .seen-row img{filter:brightness(0) invert(.38) sepia(.12) saturate(.7);}
+.seen-row a:hover img{opacity:1;}
+
 /* ============================ KIT PAGES (/press, /speaking) ============================ */
 .kit-stack{display:grid;gap:18px;}
 .kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;}
@@ -693,6 +701,14 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <li><a class="ds-link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">Los Angeles Wire &mdash; &ldquo;Luke Erickson and Immanuel Portus Bring Reagan&rsquo;s Story to Life Through a Historic Symphony Under Air Force One&rdquo;</a> <span class="coverage__meta">By Ethan Rogers &middot; July 2026</span></li>
           <li><a class="ds-link" href="https://open.spotify.com/episode/2ukvJkEWd2yvsWrbD0j6oQ" target="_blank" rel="noopener">Joe Knows Ventura (podcast) &mdash; &ldquo;Is Ventura Becoming The Next Silicon Valley? (with Luke Erickson)&rdquo;</a> <span class="coverage__meta">August 2026</span></li>
         </ul>
+
+        <h2 class="ds-display" style="font-size:var(--text-display-md);margin:52px 0 8px">As seen in</h2>
+        <p class="ds-prose" style="max-width:58ch;margin-bottom:20px">The Startup Ventura launch announcement was carried by <strong>310 outlets</strong>, including the Associated Press, Business Insider, The Globe and Mail, the National Post, the Financial Post, and the Los Angeles Daily News.</p>
+        <div class="seen-row">
+          <a href="https://apnews.com/press-release/newsfile/press-release-f1fffb2846b7a7819267099a10e61783" target="_blank" rel="noopener" aria-label="Read the Associated Press pickup"><img src="/assets/img/logos/press-ap.png" alt="Associated Press" width="179" height="160" loading="lazy" decoding="async" /></a>
+          <a href="https://markets.businessinsider.com/news/stocks/luke-erickson-launches-startup-ventura-to-build-a-new-home-for-technology-founders-in-ventura-county-1036508014" target="_blank" rel="noopener" aria-label="Read the Business Insider pickup"><img src="/assets/img/logos/press-business-insider.png" alt="Business Insider" width="444" height="160" loading="lazy" decoding="async" /></a>
+          <a href="https://finance.yahoo.com/small-business/articles/luke-erickson-launches-startup-ventura-150200274.html" target="_blank" rel="noopener" aria-label="Read the Yahoo Finance article"><img src="/assets/img/logos/press-yahoo-finance.png" alt="Yahoo Finance" width="400" height="160" loading="lazy" decoding="async" /></a>
+        </div>
 
         <h2 class="ds-display" style="font-size:var(--text-display-md);margin:52px 0 8px">Photos from the field</h2>
         <p class="ds-prose" style="max-width:54ch;margin-bottom:18px">Editorial use with credit &ldquo;Courtesy of Luke Erickson.&rdquo; Captions provided.</p>
