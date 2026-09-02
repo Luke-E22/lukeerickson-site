@@ -436,6 +436,9 @@ picture{display:contents;}
 [data-theme="dark"] .seen-row img{filter:brightness(0) invert(.86) sepia(.05) saturate(.5);}
 [data-theme="light"] .seen-row img{filter:brightness(0) invert(.38) sepia(.12) saturate(.7);}
 .seen-row a:hover img{opacity:1;}
+.seen-row--card{gap:22px;margin:2px 0 20px;}
+.seen-row--card img{height:24px;}
+.seen-row--card img[alt="Associated Press"]{height:32px;}
 
 /* ============================ KIT PAGES (/press, /speaking) ============================ */
 .kit-stack{display:grid;gap:18px;}

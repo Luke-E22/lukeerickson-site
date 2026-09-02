@@ -478,6 +478,9 @@ picture{display:contents;}
 [data-theme="dark"] .seen-row img{filter:brightness(0) invert(.86) sepia(.05) saturate(.5);}
 [data-theme="light"] .seen-row img{filter:brightness(0) invert(.38) sepia(.12) saturate(.7);}
 .seen-row a:hover img{opacity:1;}
+.seen-row--card{gap:22px;margin:2px 0 20px;}
+.seen-row--card img{height:24px;}
+.seen-row--card img[alt="Associated Press"]{height:32px;}
 
 /* ============================ KIT PAGES (/press, /speaking) ============================ */
 .kit-stack{display:grid;gap:18px;}
@@ -605,6 +608,14 @@ picture{display:contents;}
       "url": "https://finance.yahoo.com/small-business/articles/luke-erickson-launches-startup-ventura-150200274.html",
       "datePublished": "2026-08-31",
       "publisher": { "@type": "Organization", "name": "Yahoo Finance", "url": "https://finance.yahoo.com" },
+      "author": { "@type": "Organization", "name": "TMX Newsfile" }
+    },
+    {
+      "@type": "NewsArticle",
+      "headline": "Luke Erickson Launches Startup Ventura to Build a New Home for Technology Founders in Ventura County",
+      "url": "https://apnews.com/press-release/newsfile/press-release-f1fffb2846b7a7819267099a10e61783",
+      "datePublished": "2026-08-31",
+      "publisher": { "@type": "Organization", "name": "Associated Press", "url": "https://apnews.com" },
       "author": { "@type": "Organization", "name": "TMX Newsfile" }
     },
     {
@@ -792,12 +803,16 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <span class="ds-eyebrow ds-eyebrow--line">As featured in</span>
           <div class="press__grid">
             <div class="press__card">
-              <div class="press__outlet">Yahoo Finance</div>
-              <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://finance.yahoo.com/small-business/articles/luke-erickson-launches-startup-ventura-150200274.html" target="_blank" rel="noopener">A new home for technology founders in Ventura&nbsp;County.</a></h2>
-              <p class="press__quote">&ldquo;You can build a serious company and a good life in the same place.&rdquo;</p>
+              <div class="press__outlet">Associated Press &middot; Business Insider &middot; Yahoo Finance</div>
+              <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://finance.yahoo.com/small-business/articles/luke-erickson-launches-startup-ventura-150200274.html" target="_blank" rel="noopener">Luke Erickson Launches Startup Ventura to Build a New Home for Technology Founders in Ventura County</a></h2>
+              <div class="seen-row seen-row--card">
+                <a href="https://apnews.com/press-release/newsfile/press-release-f1fffb2846b7a7819267099a10e61783" target="_blank" rel="noopener" aria-label="Read on the Associated Press"><img src="assets/img/logos/press-ap.png" alt="Associated Press" width="179" height="160" loading="lazy" decoding="async" /></a>
+                <a href="https://markets.businessinsider.com/news/stocks/luke-erickson-launches-startup-ventura-to-build-a-new-home-for-technology-founders-in-ventura-county-1036508014" target="_blank" rel="noopener" aria-label="Read on Business Insider"><img src="assets/img/logos/press-business-insider.png" alt="Business Insider" width="444" height="160" loading="lazy" decoding="async" /></a>
+                <a href="https://finance.yahoo.com/small-business/articles/luke-erickson-launches-startup-ventura-150200274.html" target="_blank" rel="noopener" aria-label="Read on Yahoo Finance"><img src="assets/img/logos/press-yahoo-finance.png" alt="Yahoo Finance" width="400" height="160" loading="lazy" decoding="async" /></a>
+              </div>
               <div class="press__meta">
                 <a class="ds-btn ds-btn--link" href="https://finance.yahoo.com/small-business/articles/luke-erickson-launches-startup-ventura-150200274.html" target="_blank" rel="noopener">Read the article <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-                <span class="press__date">Via TMX Newsfile &middot; August 2026</span>
+                <span class="press__date">Carried by 310 outlets &middot; August 2026</span>
               </div>
             </div>
             <div class="press__card">
