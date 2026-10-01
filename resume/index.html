@@ -465,6 +465,17 @@ picture{display:contents;}
 .press__quote{color:var(--text-secondary);font-size:var(--text-body-lg);line-height:1.6;max-width:60ch;margin:0 0 20px;}
 .press__meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
 .press__date{font-size:var(--text-caption);color:var(--text-muted);}
+/* featured (full-row) card: copy left, player right; stacks on mobile */
+.press__grid .press__card--wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-rows:auto auto 1fr auto;grid-template-areas:"outlet player" "headline player" "quote player" "meta player";column-gap:clamp(24px,4vw,48px);align-items:start;}
+.press__card--wide .press__outlet{grid-area:outlet;}
+.press__card--wide .press__headline{grid-area:headline;font-size:clamp(1.5rem,1.2rem + 1.4vw,2.25rem);}
+.press__card--wide .press__quote{grid-area:quote;}
+.press__card--wide .press__player{grid-area:player;margin:0;align-self:center;}
+.press__grid .press__card--wide .press__meta{grid-area:meta;margin-top:0;align-self:end;}
+@media (max-width:880px){.press__grid .press__card--wide{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"outlet" "headline" "player" "quote" "meta";} .press__card--wide .press__player{margin:0 0 20px;}}
+/* /speaking: secondary players side by side under the lead video */
+.hear-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:640px;}
+.hear-grid .press__player{margin:0;}
 
 /* ============================ AS-SEEN-IN STRIP (/press) ============================ */
 .seen-row{display:flex;align-items:center;gap:clamp(30px,4.5vw,56px);flex-wrap:wrap;}
@@ -626,6 +637,23 @@ picture{display:contents;}
       "datePublished": "2026-09-25",
       "partOfSeries": { "@type": "PodcastSeries", "name": "The Hustle" },
       "publisher": { "@type": "Organization", "name": "VC Locals Only", "url": "https://www.youtube.com/@vclocalsonly" }
+    },
+    {
+      "@type": "NewsArticle",
+      "headline": "Startup Ventura: Connecting Early-Stage Founders with Mentors and Funding",
+      "url": "https://ourventura.com/startup-ventura-connecting-early-stage-founders-with-mentors-and-funding/",
+      "datePublished": "2026-09-30",
+      "publisher": { "@type": "Organization", "name": "Our Ventura TV", "url": "https://ourventura.com" },
+      "producer": { "@type": "Person", "name": "George Alger" },
+      "video": {
+        "@type": "VideoObject",
+        "name": "Startup Ventura: Connecting Early-Stage Founders with Mentors and Funding",
+        "description": "Luke Erickson speaks with George Alger about Startup Ventura on Our Ventura TV, broadcast on Ventura cable channel 6.",
+        "uploadDate": "2026-09-30",
+        "thumbnailUrl": "https://i.ytimg.com/vi/4oNIn2sBPoI/hqdefault.jpg",
+        "embedUrl": "https://www.youtube.com/embed/4oNIn2sBPoI",
+        "url": "https://www.youtube.com/watch?v=4oNIn2sBPoI"
+      }
     }
   ]
 }
