@@ -478,6 +478,11 @@ picture{display:contents;}
 .press__card--wide .press__player{grid-area:player;margin:0;align-self:center;}
 .press__grid .press__card--wide .press__meta{grid-area:meta;margin-top:0;align-self:end;}
 @media (max-width:880px){.press__grid .press__card--wide{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"outlet" "headline" "player" "quote" "meta";} .press__card--wide .press__player{margin:0 0 20px;}}
+/* featured card with no player: a pull quote takes the right column */
+.press__pull{grid-area:player;align-self:center;margin:0;padding-left:clamp(18px,2.4vw,28px);border-left:2px solid var(--coral-500);}
+.press__pull p{font-family:var(--font-display);font-weight:var(--fw-display-book);font-style:italic;font-size:clamp(1.35rem,1.1rem + 1.2vw,2rem);line-height:1.28;color:var(--text-primary);margin:0;}
+.press__pull cite{display:block;margin-top:14px;font-family:var(--font-sans);font-style:normal;font-size:var(--text-caption);letter-spacing:.04em;color:var(--text-muted);}
+@media (max-width:880px){.press__pull{margin:4px 0 20px;}}
 /* /speaking: secondary players side by side under the lead video */
 .hear-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:640px;}
 .hear-grid .press__player{margin:0;}
@@ -660,6 +665,15 @@ picture{display:contents;}
         "embedUrl": "https://www.youtube.com/embed/4oNIn2sBPoI",
         "url": "https://www.youtube.com/watch?v=4oNIn2sBPoI"
       }
+    },
+    {
+      "@type": "NewsArticle",
+      "headline": "Ventura pushes the accelerator pedal",
+      "url": "https://www.pacbiztimes.com/2026/10/02/ventura-pushes-the-accelerator-pedal/",
+      "datePublished": "2026-10-02",
+      "isAccessibleForFree": false,
+      "publisher": { "@type": "Organization", "name": "Pacific Coast Business Times", "url": "https://www.pacbiztimes.com" },
+      "author": { "@type": "Person", "name": "Jorge Mercado" }
     }
   ]
 }
@@ -839,13 +853,13 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <span class="ds-eyebrow ds-eyebrow--line">As featured in</span>
           <div class="press__grid">
             <div class="press__card press__card--wide">
-              <div class="press__outlet">Our Ventura TV &middot; Ventura cable channel 6</div>
-              <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://ourventura.com/startup-ventura-connecting-early-stage-founders-with-mentors-and-funding/" target="_blank" rel="noopener">Startup Ventura: Connecting Early-Stage Founders with Mentors and&nbsp;Funding</a></h2>
-              <div class="press__player"><iframe title="Our Ventura TV - Startup Ventura: Connecting Early-Stage Founders with Mentors and Funding" src="https://www.youtube.com/embed/4oNIn2sBPoI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
-              <p class="press__quote">A sit-down with host George Alger on the accelerator, what separates the founders who make it, and when to raise venture capital &mdash; and when not to.</p>
+              <div class="press__outlet">Pacific Coast Business Times</div>
+              <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://www.pacbiztimes.com/2026/10/02/ventura-pushes-the-accelerator-pedal/" target="_blank" rel="noopener">Ventura pushes the accelerator&nbsp;pedal</a></h2>
+              <blockquote class="press__pull"><p>&ldquo;I thought this was going to be my 10-year passion project for the county&hellip;&rdquo;</p><cite>Luke Erickson, to the Business Times</cite></blockquote>
+              <p class="press__quote">The tri-county business weekly on why Startup Ventura is launching now rather than in ten years &mdash; the board insisted &mdash; and the Trade Desk precedent that says it can work here.</p>
               <div class="press__meta">
-                <a class="ds-btn ds-btn--link" href="https://ourventura.com/startup-ventura-connecting-early-stage-founders-with-mentors-and-funding/" target="_blank" rel="noopener">Watch the interview <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-                <span class="press__date">Aired on cable channel 6 &middot; September 2026</span>
+                <a class="ds-btn ds-btn--link" href="https://www.pacbiztimes.com/2026/10/02/ventura-pushes-the-accelerator-pedal/" target="_blank" rel="noopener">Read the article <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+                <span class="press__date">By Jorge Mercado &middot; October 2026</span>
               </div>
             </div>
             <div class="press__card">
@@ -862,15 +876,6 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
               </div>
             </div>
             <div class="press__card">
-              <div class="press__outlet">The Hustle &middot; VC Locals Only</div>
-              <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://www.youtube.com/watch?v=EVHIP8QqFnc" target="_blank" rel="noopener">Can Ventura become California&rsquo;s next startup&nbsp;hub?</a></h2>
-              <div class="press__player"><iframe title="The Hustle Ep 1: Can Ventura become California's next startup hub?" src="https://www.youtube.com/embed/EVHIP8QqFnc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
-              <div class="press__meta">
-                <a class="ds-btn ds-btn--link" href="https://www.youtube.com/watch?v=EVHIP8QqFnc" target="_blank" rel="noopener">Watch on YouTube <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-                <span class="press__date">Episode 1 &middot; September 2026</span>
-              </div>
-            </div>
-            <div class="press__card">
               <div class="press__outlet">Los Angeles Wire</div>
               <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">Bringing Reagan&rsquo;s story to life through a historic symphony under Air&nbsp;Force&nbsp;One.</a></h2>
               <p class="press__quote">&ldquo;America 250 is about celebrating what we have built together. We set out to unite people around our shared values and history, in a place where you can truly feel the American spirit.&rdquo;</p>
@@ -880,9 +885,29 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
               </div>
             </div>
             <div class="press__card">
+              <div class="press__outlet">Our Ventura TV &middot; Ventura cable channel 6</div>
+              <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://ourventura.com/startup-ventura-connecting-early-stage-founders-with-mentors-and-funding/" target="_blank" rel="noopener">Startup Ventura: Connecting Early-Stage Founders with Mentors and&nbsp;Funding</a></h2>
+              <div class="press__player"><iframe title="Our Ventura TV - Startup Ventura: Connecting Early-Stage Founders with Mentors and Funding" src="https://www.youtube.com/embed/4oNIn2sBPoI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+              <p class="press__quote">A sit-down with host George Alger on the accelerator, what separates the founders who make it, and when to raise venture capital &mdash; and when not to.</p>
+              <div class="press__meta">
+                <a class="ds-btn ds-btn--link" href="https://ourventura.com/startup-ventura-connecting-early-stage-founders-with-mentors-and-funding/" target="_blank" rel="noopener">Watch the interview <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+                <span class="press__date">Aired on cable channel 6 &middot; September 2026</span>
+              </div>
+            </div>
+            <div class="press__card">
+              <div class="press__outlet">The Hustle &middot; VC Locals Only</div>
+              <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://www.youtube.com/watch?v=EVHIP8QqFnc" target="_blank" rel="noopener">Can Ventura become California&rsquo;s next startup&nbsp;hub?</a></h2>
+              <div class="press__player"><iframe title="The Hustle Ep 1: Can Ventura become California's next startup hub?" src="https://www.youtube.com/embed/EVHIP8QqFnc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+              <div class="press__meta">
+                <a class="ds-btn ds-btn--link" href="https://www.youtube.com/watch?v=EVHIP8QqFnc" target="_blank" rel="noopener">Watch on YouTube <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+                <span class="press__date">Episode 1 &middot; September 2026</span>
+              </div>
+            </div>
+            <div class="press__card press__card--wide">
               <div class="press__outlet">Joe Knows Ventura &middot; Podcast</div>
               <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://open.spotify.com/episode/2ukvJkEWd2yvsWrbD0j6oQ" target="_blank" rel="noopener">Is Ventura becoming the next Silicon&nbsp;Valley?</a></h2>
               <div class="press__player"><iframe title="Spotify: Is Ventura Becoming The Next Silicon Valley? (with Luke Erickson)" src="https://open.spotify.com/embed/episode/2ukvJkEWd2yvsWrbD0j6oQ/video?utm_source=generator&amp;theme=0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+              <p class="press__quote">A full-length conversation on Ventura&rsquo;s startup future, on the Joe Knows Ventura podcast.</p>
               <div class="press__meta">
                 <a class="ds-btn ds-btn--link" href="https://open.spotify.com/episode/2ukvJkEWd2yvsWrbD0j6oQ" target="_blank" rel="noopener">Listen on Spotify <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
                 <span class="press__date">August 2026</span>
