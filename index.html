@@ -568,6 +568,13 @@ picture{display:contents;}
 @media (max-width:560px){.gallery{columns:1;}.xp__item{grid-template-columns:1fr;}.xp__tile{display:none;}}
 /* Small phones: drop the wordmark NAME (keep the LE monogram) so the header controls + hamburger always fit */
 @media (max-width:440px){.ds-wordmark__name{display:none;}.site-header .ds-wordmark{gap:0;}}
+
+/* ============================ PHILANTHROPY (home) ============================ */
+.give-card .kit-label{color:var(--accent-coral-ink);}
+.give-card .talk__title{margin-bottom:6px;}
+.give-lede{max-width:58ch;margin:0;color:var(--text-secondary);font-size:var(--text-body-lg);line-height:1.6;}
+.give-also{margin:22px 0 0;max-width:72ch;color:var(--text-muted);font-size:var(--text-body-sm);line-height:1.6;}
+.give-also b{color:var(--text-secondary);font-weight:600;}
 </style>
 
 <link rel="icon" type="image/svg+xml" href="assets/logo/LE-monogram.svg" />
@@ -709,6 +716,17 @@ picture{display:contents;}
   "description": "A 501(c)(3) tech accelerator backing creators, gamers, and founders in Ventura County, California."
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://lukeerickson.com/#thewebsitegrant",
+  "name": "The Website Grant",
+  "url": "https://thewebsitegrant.com",
+  "founder": { "@id": "https://lukeerickson.com/#luke" },
+  "description": "A program founded by Luke Erickson that gives nonprofits and small businesses an affordable, fully built modern website."
+}
+</script>
 
 <!-- Google Analytics (GA4) -->
 <script>
@@ -778,6 +796,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
         <div class="site-nav__links" id="navLinks">
           <a class="nav-link" href="/about/me">My story</a>
           <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#philanthropy">Philanthropy</a>
           <a class="nav-link" href="#moments">Moments</a>
           <a class="nav-link" href="/speaking">Speaking</a>
           <a class="nav-link" href="#guides">Guides</a>
@@ -1027,6 +1046,44 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
         <div class="xp__more">
           <a class="ds-btn ds-btn--link" href="/resume">View the full r&eacute;sum&eacute; <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
         </div>
+      </div>
+    </section>
+
+    <!-- ===================== PHILANTHROPY ===================== -->
+    <section class="section" id="philanthropy">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="ds-eyebrow ds-eyebrow--line">Philanthropy</span>
+          <h2 class="ds-display" style="font-size:var(--text-display-md)">The other half of the r&eacute;sum&eacute;.</h2>
+          <p class="give-lede">I believe a life is measured less by what you accumulate than by what you give and who you lift along the way. These are the places I put that into practice.</p>
+        </div>
+        <div class="kit-grid reveal">
+          <a class="ds-card kit-card guide-card give-card" href="https://startupventura.com" target="_blank" rel="noopener">
+            <span class="kit-label">Founder &amp; Executive Director</span>
+            <h3 class="talk__title">Startup Ventura</h3>
+            <p class="talk__abs">The 501(c)(3) tech accelerator I founded to keep Ventura County&rsquo;s builders building here &mdash; backed by a founding investment from the City of Ventura and awarded Candid&rsquo;s Platinum Seal of Transparency.</p>
+            <span class="ds-btn ds-btn--link">Visit Startup Ventura <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
+          </a>
+          <a class="ds-card kit-card guide-card give-card" href="https://newwestsymphony.org/about/board/" target="_blank" rel="noopener">
+            <span class="kit-label">Board of Directors</span>
+            <h3 class="talk__title">New West Symphony</h3>
+            <p class="talk__abs">The youngest board member in the orchestra&rsquo;s history. I chaired its America 250 Taskforce and produced the first symphony concert ever held at the Ronald Reagan Presidential Library.</p>
+            <span class="ds-btn ds-btn--link">Meet the board <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
+          </a>
+          <a class="ds-card kit-card guide-card give-card" href="https://serracrosspark.com" target="_blank" rel="noopener">
+            <span class="kit-label">Board of Directors</span>
+            <h3 class="talk__title">Serra Cross Conservancy</h3>
+            <p class="talk__abs">The nonprofit that cares for Serra Cross Park on the hill above City Hall. I joined the board in 2026 to help preserve the park and modernize its website and wedding-booking workflow.</p>
+            <span class="ds-btn ds-btn--link">Visit Serra Cross Park <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
+          </a>
+          <a class="ds-card kit-card guide-card give-card" href="https://thewebsitegrant.com" target="_blank" rel="noopener">
+            <span class="kit-label">Founder</span>
+            <h3 class="talk__title">The Website Grant</h3>
+            <p class="talk__abs">I started it to give nonprofits an affordable way to replace an outdated website: a full design system, the build, revisions, domain setup, and hosting with no end date &mdash; for $1,000, against the $5,000 to $20,000 an agency typically charges. Small businesses are welcome too.</p>
+            <span class="ds-btn ds-btn--link">Visit The Website Grant <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
+          </a>
+        </div>
+        <p class="give-also reveal"><b>Also:</b> Rotary Club of Ventura (Rookie Rotarian of the Year, 2025) &middot; mentoring students at CSU Channel Islands &middot; teaching entrepreneurship at the Boys &amp; Girls Club of Greater Ventura.</p>
       </div>
     </section>
 
