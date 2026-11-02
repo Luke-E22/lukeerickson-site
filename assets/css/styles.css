@@ -218,7 +218,7 @@ picture{display:contents;}
 .site-header.is-scrolled .site-header__inner{background:var(--color-surface-translucent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--color-border);}
 .site-nav{display:flex;align-items:center;gap:clamp(10px,2vw,28px);}
 .site-nav__links{display:flex;align-items:center;gap:clamp(10px,2vw,28px);}
-.nav-link{background:none;border:0;cursor:pointer;font-family:var(--font-sans);font-weight:500;font-size:15px;color:var(--text-secondary);padding:6px 2px;transition:color var(--dur-fast) var(--ease-soft);text-decoration:none;}
+.nav-link{background:none;border:0;cursor:pointer;font-family:var(--font-sans);font-weight:500;font-size:15px;color:var(--text-secondary);padding:6px 2px;white-space:nowrap;transition:color var(--dur-fast) var(--ease-soft);text-decoration:none;}
 .nav-link:hover,.nav-link:focus-visible{color:var(--text-primary);}
 .nav-toggle{display:none;}
 
@@ -516,6 +516,8 @@ picture{display:contents;}
   .resume-hero__actions{align-items:flex-start;}
 }
 @media (max-width:900px){.gallery{columns:2;}}
+/* Mid-width desktops: full nav still shows; drop the wordmark NAME and tighten gaps so seven links fit on one row */
+@media (max-width:1120px) and (min-width:881px){.ds-wordmark__name{display:none;}.site-header .ds-wordmark{gap:0;}.site-nav,.site-nav__links{gap:clamp(10px,1.6vw,20px);}}
 @media (max-width:880px){
   .site-nav__links{display:none;}
   .nav-toggle{display:inline-grid;}
