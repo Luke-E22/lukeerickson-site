@@ -13,7 +13,20 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 
 <title>Privacy &mdash; Luke Erickson</title>
 <meta name="description" content="How lukeerickson.com handles your information: the contact form, Google Analytics cookies, embedded content, and how to reach Luke about your data." />
-<link rel="canonical" href="https://lukeerickson.com/privacy" />
+<link rel="canonical" href="https://lukeerickson.com/privacy/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Luke Erickson" />
+<meta property="og:title" content="Privacy &mdash; Luke Erickson" />
+<meta property="og:description" content="How lukeerickson.com handles your information: the contact form, Google Analytics cookies, embedded content, and how to reach Luke about your data." />
+<meta property="og:url" content="https://lukeerickson.com/privacy/" />
+<meta property="og:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Luke Erickson" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Privacy &mdash; Luke Erickson" />
+<meta name="twitter:description" content="How lukeerickson.com handles your information: the contact form, Google Analytics cookies, embedded content, and how to reach Luke about your data." />
+<meta name="twitter:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Luke Erickson" />
 <meta name="theme-color" content="#181D24" />
@@ -52,7 +65,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   --color-border:var(--sky-200);--color-border-strong:var(--sky-300);
   --text-primary:var(--ink-800);--text-secondary:var(--ink-600);--text-muted:#69727F;--text-faint:var(--ink-400);
   --text-on-ink:#F4F7FB;--text-on-coral:var(--ink-900);
-  --accent-blue:var(--blue-500);--accent-blue-ink:var(--blue-700);--accent-coral:var(--coral-500);--accent-coral-ink:var(--coral-700);
+  --accent-blue:var(--blue-500);--accent-blue-ink:var(--blue-700);--accent-coral:var(--coral-500);--accent-coral-ink:#A35E4D;
   --logo-l:#5B6675;--logo-e:#5B6675;
   --link:var(--blue-700);--link-hover:#355E86;--focus-ring:rgba(123,167,209,.55);
   --color-bg-deep:var(--sky-150);--color-surface-2:var(--sky-50);--color-input-bg:var(--white);--glass-border:rgba(255,255,255,.6);--color-hover-surface:var(--sky-100);
@@ -98,7 +111,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   --color-bg:#181D24;--color-bg-deep:#0E1217;--color-bg-tint:#1E242D;--color-surface:#232B35;--color-surface-sunken:#14181E;--color-surface-2:#2A3340;
   --color-surface-translucent:rgba(31,38,47,.62);--color-input-bg:#1B212A;--glass-border:rgba(255,255,255,.10);
   --color-border:rgba(180,198,219,.12);--color-border-strong:rgba(180,198,219,.22);
-  --text-primary:#E7ECF3;--text-secondary:#AEB9C7;--text-muted:#818D9C;--text-faint:#5E6A78;--text-on-coral:#20262E;
+  --text-primary:#E7ECF3;--text-secondary:#AEB9C7;--text-muted:#8994A2;--text-faint:#5E6A78;--text-on-coral:#20262E;
   --accent-blue:#8FB8DE;--accent-blue-ink:#A9C6E2;--accent-coral:#F0A292;--accent-coral-ink:#F2B3A6;
   --link:#A9C6E2;--link-hover:#C7DBEE;--focus-ring:rgba(143,184,222,.50);
   --logo-l:#C9D2DD;--logo-e:#C9D2DD;
@@ -560,6 +573,38 @@ picture{display:contents;}
 .give-lede{max-width:58ch;margin:0;color:var(--text-secondary);font-size:var(--text-body-lg);line-height:1.6;}
 .give-also{margin:22px 0 0;max-width:72ch;color:var(--text-muted);font-size:var(--text-body-sm);line-height:1.6;}
 .give-also b{color:var(--text-secondary);font-weight:600;}
+
+/* ---------------- Audit quick wins (2026-11-07) ---------------- */
+.nav-link[aria-current="page"]{color:var(--text-primary);}
+/* Copy buttons sit top-right of bio cards; keep labels clear of them */
+.bio-card > .kit-label{padding-right:84px;}
+/* Attribution under a press-card quote */
+.press__by{margin:-10px 0 20px;font-family:var(--font-sans);font-size:var(--text-caption);letter-spacing:.04em;color:var(--text-muted);}
+/* Closing "Get in touch" card on mentorship + guides; inline button under the mentorship intro */
+.page-cta{margin-top:clamp(40px,5vw,56px);}
+.page-cta__inline{margin:22px 0 8px;}
+/* Press "Photos from the field": even 4:5 thumbnails centered on Luke (Download keeps the full photo) */
+.field-grid{align-items:stretch;}
+.field-grid .headshot-card{display:flex;flex-direction:column;}
+.field-frame{aspect-ratio:4/5;margin-bottom:14px;border-radius:var(--radius-md);overflow:hidden;}
+.field-frame picture{display:block;width:100%;height:100%;}
+.field-frame img{width:100%;height:100%;object-fit:cover;margin:0;border-radius:0;}
+.field-frame img[src*="popl-nasdaq"]{object-position:50% 85%;}
+.field-frame img[src*="speaking"]{object-position:50% 30%;}
+.field-grid .headshot-card__row{margin-top:auto;flex-direction:column;align-items:flex-start;}
+/* Philanthropy cards: equal heights per row, links aligned at the bottom */
+.kit-grid > .give-card{align-self:stretch;}
+/* Phones: 44px minimum tap targets for nav, footer and button links */
+@media (max-width:880px){
+  .site-header .ds-wordmark,.footer .ds-wordmark{min-height:44px;min-width:44px;}
+  .site-header.nav-open .site-nav__links{gap:2px;}
+  .site-header.nav-open .nav-link{display:flex;align-items:center;min-height:44px;}
+  .ds-btn--sm{min-height:44px;}
+  .footer__nav{gap:0 22px;}
+  .footer__nav a,.motion-toggle{display:inline-flex;align-items:center;min-height:44px;}
+  a.contact__line{align-items:center;min-height:44px;}
+  .seen-row a{display:inline-flex;align-items:center;min-height:44px;}
+}
 </style>
 
 <!-- Google Analytics (GA4) -->
@@ -604,12 +649,11 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
       </a>
       <nav class="site-nav" aria-label="Primary">
         <div class="site-nav__links" id="navLinks">
-          <a class="nav-link" href="/about/me">My story</a>
-          <a class="nav-link" href="/#experience">Experience</a>
-          <a class="nav-link" href="/#moments">Moments</a>
-          <a class="nav-link" href="/speaking">Speaking</a>
+          <a class="nav-link" href="/about/me/">My story</a>
+          <a class="nav-link" href="/speaking/">Speaking</a>
+          <a class="nav-link" href="/press/">Press</a>
           <a class="nav-link" href="/#guides">Guides</a>
-          <a class="nav-link" href="/resume">Resume</a>
+          <a class="nav-link" href="/resume/">Resume</a>
         </div>
         <button class="ds-iconbtn" id="themeToggle" type="button" aria-label="Switch theme">
           <svg class="icon" id="themeIcon" aria-hidden="true"><use href="#i-sun"/></svg>
@@ -627,7 +671,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
       <div class="container" style="max-width:720px">
         <span class="ds-eyebrow ds-eyebrow--line">Privacy</span>
         <h1 class="ds-display" style="font-size:var(--text-display-lg);margin:14px 0 10px">A short, honest privacy policy.</h1>
-        <p style="color:var(--text-muted);font-size:var(--text-body-sm);margin-bottom:6px">Effective August 8, 2026</p>
+        <p style="color:var(--text-muted);font-size:var(--text-body-sm);margin-bottom:6px">Updated November 7, 2026</p>
         <div class="ds-prose" style="max-width:62ch">
           <p>This is my personal website. It collects very little, and none of it is ever sold. Here is exactly what happens with your information.</p>
 
@@ -636,7 +680,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
 <h2 class="ds-display" style="font-size:var(--text-h3);margin:34px 0 10px">Analytics</h2>
           <p>The site uses Google Analytics 4, which sets cookies so I can see which pages get read and roughly where visitors come from. Google processes this data under <a class="ds-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">its privacy policy</a>. If you'd rather not be counted, you can block cookies in your browser or use Google's <a class="ds-link" href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">opt-out add-on</a>.</p>
 <h2 class="ds-display" style="font-size:var(--text-h3);margin:34px 0 10px">Embedded content</h2>
-          <p>The home page embeds a Spotify podcast player. When it loads, Spotify may set its own cookies under <a class="ds-link" href="https://www.spotify.com/legal/privacy-policy/" target="_blank" rel="noopener">Spotify's privacy policy</a>.</p>
+          <p>The home and speaking pages embed a Spotify podcast player and YouTube videos. When the Spotify player loads, Spotify may set its own cookies under <a class="ds-link" href="https://www.spotify.com/legal/privacy-policy/" target="_blank" rel="noopener">Spotify's privacy policy</a>. The videos use YouTube&rsquo;s privacy-enhanced mode, which YouTube says doesn&rsquo;t store information about you unless you play a video. Once you press play, <a class="ds-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s privacy policy</a> applies.</p>
 <h2 class="ds-display" style="font-size:var(--text-h3);margin:34px 0 10px">Hosting</h2>
           <p>The site is hosted on Netlify, which keeps standard server logs (IP address, browser type) for security and operations, like every host on the internet.</p>
 <h2 class="ds-display" style="font-size:var(--text-h3);margin:34px 0 10px">Your choices</h2>
@@ -660,17 +704,17 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <span class="ds-wordmark__name">Luke Erickson</span>
         </a>
         <nav class="footer__nav" aria-label="Footer">
-          <a href="/about/me">My story</a>
-          <a href="/speaking">Speaking</a>
+          <a href="/about/me/">My story</a>
+          <a href="/speaking/">Speaking</a>
           <a href="/#guides">Guides</a>
-          <a href="/press">Press kit</a>
-          <a href="/resume">Resume</a>
+          <a href="/press/">Press kit</a>
+          <a href="/resume/">Resume</a>
           <a href="/">Home</a>
           <a href="/#contact">Contact</a>
-          <a href="/privacy">Privacy</a>
+          <a href="/privacy/">Privacy</a>
         </nav>
         <div class="footer__meta">
-          <button class="motion-toggle" id="motionToggle" type="button" aria-label="Change motion level">Motion: rich</button>
+          <button class="motion-toggle" id="motionToggle" type="button" aria-label="Motion: full, change motion level">Motion: full</button>
           <span class="footer__copy">© <span id="year">2026</span> Luke Erickson</span>
         </div>
       </div>

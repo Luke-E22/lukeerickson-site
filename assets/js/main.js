@@ -170,8 +170,13 @@
 
   /* ---------- motion toggle (rich -> calm -> still) ---------- */
   var motionBtn = document.getElementById('motionToggle');
+  // Stored values stay rich/calm/still; visitors see plain words.
+  var motionWords = { rich: 'full', calm: 'reduced', still: 'off' };
   function labelMotion() {
-    if (motionBtn) motionBtn.textContent = 'Motion: ' + motion();
+    if (!motionBtn) return;
+    var label = 'Motion: ' + (motionWords[motion()] || motion());
+    motionBtn.textContent = label;
+    motionBtn.setAttribute('aria-label', label + ', change motion level');
   }
   if (motionBtn) {
     motionBtn.addEventListener('click', function () {
@@ -193,7 +198,6 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      gaTrack('contact_submit');
       var reveal = function () {
         form.hidden = true;
         if (success) { success.hidden = false; success.setAttribute('role', 'status'); }
@@ -210,8 +214,12 @@
       // Submit to Netlify Forms: urlencoded POST to any same-site path, form-name included.
       var body = new URLSearchParams(new FormData(form)).toString();
       fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
-        .then(function (res) { if (res && res.ok) { reveal(); } else { emailFallback(); } })
-        .catch(emailFallback);
+        // contact_submit counts delivered messages only; the mailto fallback is tracked separately.
+        .then(function (res) {
+          if (res && res.ok) { gaTrack('contact_submit'); reveal(); }
+          else { gaTrack('contact_fallback'); emailFallback(); }
+        })
+        .catch(function () { gaTrack('contact_fallback'); emailFallback(); });
     });
   }
 

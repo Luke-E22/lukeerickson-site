@@ -38,7 +38,6 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 <link rel="preload" as="image" type="image/avif" imagesrcset="assets/img/luke-erickson-hero-480.avif 480w, assets/img/luke-erickson-hero-720.avif 720w, assets/img/luke-erickson-hero-960.avif 960w" imagesizes="(max-width:880px) 340px, 440px" fetchpriority="high" />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/newsreader-300.woff2" crossorigin />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/hanken-grotesk-400.woff2" crossorigin />
-<link rel="preload" as="style" href="assets/css/styles.css" />
 <style data-inline-css>
 /* ============================================================
    Luke Erickson — lukeerickson.com
@@ -69,7 +68,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   --color-border:var(--sky-200);--color-border-strong:var(--sky-300);
   --text-primary:var(--ink-800);--text-secondary:var(--ink-600);--text-muted:#69727F;--text-faint:var(--ink-400);
   --text-on-ink:#F4F7FB;--text-on-coral:var(--ink-900);
-  --accent-blue:var(--blue-500);--accent-blue-ink:var(--blue-700);--accent-coral:var(--coral-500);--accent-coral-ink:var(--coral-700);
+  --accent-blue:var(--blue-500);--accent-blue-ink:var(--blue-700);--accent-coral:var(--coral-500);--accent-coral-ink:#A35E4D;
   --logo-l:#5B6675;--logo-e:#5B6675;
   --link:var(--blue-700);--link-hover:#355E86;--focus-ring:rgba(123,167,209,.55);
   --color-bg-deep:var(--sky-150);--color-surface-2:var(--sky-50);--color-input-bg:var(--white);--glass-border:rgba(255,255,255,.6);--color-hover-surface:var(--sky-100);
@@ -115,7 +114,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   --color-bg:#181D24;--color-bg-deep:#0E1217;--color-bg-tint:#1E242D;--color-surface:#232B35;--color-surface-sunken:#14181E;--color-surface-2:#2A3340;
   --color-surface-translucent:rgba(31,38,47,.62);--color-input-bg:#1B212A;--glass-border:rgba(255,255,255,.10);
   --color-border:rgba(180,198,219,.12);--color-border-strong:rgba(180,198,219,.22);
-  --text-primary:#E7ECF3;--text-secondary:#AEB9C7;--text-muted:#818D9C;--text-faint:#5E6A78;--text-on-coral:#20262E;
+  --text-primary:#E7ECF3;--text-secondary:#AEB9C7;--text-muted:#8994A2;--text-faint:#5E6A78;--text-on-coral:#20262E;
   --accent-blue:#8FB8DE;--accent-blue-ink:#A9C6E2;--accent-coral:#F0A292;--accent-coral-ink:#F2B3A6;
   --link:#A9C6E2;--link-hover:#C7DBEE;--focus-ring:rgba(143,184,222,.50);
   --logo-l:#C9D2DD;--logo-e:#C9D2DD;
@@ -577,6 +576,38 @@ picture{display:contents;}
 .give-lede{max-width:58ch;margin:0;color:var(--text-secondary);font-size:var(--text-body-lg);line-height:1.6;}
 .give-also{margin:22px 0 0;max-width:72ch;color:var(--text-muted);font-size:var(--text-body-sm);line-height:1.6;}
 .give-also b{color:var(--text-secondary);font-weight:600;}
+
+/* ---------------- Audit quick wins (2026-11-07) ---------------- */
+.nav-link[aria-current="page"]{color:var(--text-primary);}
+/* Copy buttons sit top-right of bio cards; keep labels clear of them */
+.bio-card > .kit-label{padding-right:84px;}
+/* Attribution under a press-card quote */
+.press__by{margin:-10px 0 20px;font-family:var(--font-sans);font-size:var(--text-caption);letter-spacing:.04em;color:var(--text-muted);}
+/* Closing "Get in touch" card on mentorship + guides; inline button under the mentorship intro */
+.page-cta{margin-top:clamp(40px,5vw,56px);}
+.page-cta__inline{margin:22px 0 8px;}
+/* Press "Photos from the field": even 4:5 thumbnails centered on Luke (Download keeps the full photo) */
+.field-grid{align-items:stretch;}
+.field-grid .headshot-card{display:flex;flex-direction:column;}
+.field-frame{aspect-ratio:4/5;margin-bottom:14px;border-radius:var(--radius-md);overflow:hidden;}
+.field-frame picture{display:block;width:100%;height:100%;}
+.field-frame img{width:100%;height:100%;object-fit:cover;margin:0;border-radius:0;}
+.field-frame img[src*="popl-nasdaq"]{object-position:50% 85%;}
+.field-frame img[src*="speaking"]{object-position:50% 30%;}
+.field-grid .headshot-card__row{margin-top:auto;flex-direction:column;align-items:flex-start;}
+/* Philanthropy cards: equal heights per row, links aligned at the bottom */
+.kit-grid > .give-card{align-self:stretch;}
+/* Phones: 44px minimum tap targets for nav, footer and button links */
+@media (max-width:880px){
+  .site-header .ds-wordmark,.footer .ds-wordmark{min-height:44px;min-width:44px;}
+  .site-header.nav-open .site-nav__links{gap:2px;}
+  .site-header.nav-open .nav-link{display:flex;align-items:center;min-height:44px;}
+  .ds-btn--sm{min-height:44px;}
+  .footer__nav{gap:0 22px;}
+  .footer__nav a,.motion-toggle{display:inline-flex;align-items:center;min-height:44px;}
+  a.contact__line{align-items:center;min-height:44px;}
+  .seen-row a{display:inline-flex;align-items:center;min-height:44px;}
+}
 </style>
 
 <link rel="icon" type="image/svg+xml" href="assets/logo/LE-monogram.svg" />
@@ -796,13 +827,11 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
       </a>
       <nav class="site-nav" aria-label="Primary">
         <div class="site-nav__links" id="navLinks">
-          <a class="nav-link" href="/about/me">My story</a>
-          <a class="nav-link" href="#experience">Experience</a>
-          <a class="nav-link" href="#philanthropy">Philanthropy</a>
-          <a class="nav-link" href="#moments">Moments</a>
-          <a class="nav-link" href="/speaking">Speaking</a>
+          <a class="nav-link" href="/about/me/">My story</a>
+          <a class="nav-link" href="/speaking/">Speaking</a>
+          <a class="nav-link" href="/press/">Press</a>
           <a class="nav-link" href="#guides">Guides</a>
-          <a class="nav-link" href="/resume">Resume</a>
+          <a class="nav-link" href="/resume/">Resume</a>
         </div>
         <button class="ds-iconbtn" id="themeToggle" type="button" aria-label="Switch theme">
           <svg class="icon" id="themeIcon" aria-hidden="true"><use href="#i-sun"/></svg>
@@ -824,10 +853,10 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <div class="hero__copy">
             <span class="ds-eyebrow ds-eyebrow--line">Founder &amp; Executive Director, Startup Ventura</span>
             <h1 class="ds-display hero__name">Luke Erickson</h1>
-            <p class="ds-prose hero__lead">I sold for startups for ten years. Now I use what the quota taught me to get Ventura County founders funded.</p>
+            <p class="ds-prose hero__lead">I started Startup Ventura because I kept meeting talented people in Ventura County with a real idea and nowhere to take it.</p>
             <div class="hero__cta">
               <a class="ds-btn ds-btn--primary ds-btn--lg" href="#contact">Get in touch <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-              <a class="ds-btn ds-btn--link" href="/about/me">Read the story <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+              <a class="ds-btn ds-btn--link" href="/about/me/">Read the story <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
             </div>
           </div>
           <div class="hero__media" id="heroMedia">
@@ -903,6 +932,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
               <div class="press__outlet">Los Angeles Wire</div>
               <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">Bringing Reagan&rsquo;s story to life through a historic symphony under Air&nbsp;Force&nbsp;One.</a></h2>
               <p class="press__quote">&ldquo;America 250 is about celebrating what we have built together. We set out to unite people around our shared values and history, in a place where you can truly feel the American spirit.&rdquo;</p>
+              <p class="press__by">Luke Erickson, to the Los Angeles Wire</p>
               <div class="press__meta">
                 <a class="ds-btn ds-btn--link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">Read the article <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
                 <span class="press__date">By Ethan Rogers &middot; July 2026</span>
@@ -911,7 +941,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
             <div class="press__card">
               <div class="press__outlet">Our Ventura TV &middot; Ventura cable channel 6</div>
               <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://ourventura.com/startup-ventura-connecting-early-stage-founders-with-mentors-and-funding/" target="_blank" rel="noopener">Startup Ventura: Connecting Early-Stage Founders with Mentors and&nbsp;Funding</a></h2>
-              <div class="press__player"><iframe title="Our Ventura TV - Startup Ventura: Connecting Early-Stage Founders with Mentors and Funding" src="https://www.youtube.com/embed/4oNIn2sBPoI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+              <div class="press__player"><iframe title="Our Ventura TV - Startup Ventura: Connecting Early-Stage Founders with Mentors and Funding" src="https://www.youtube-nocookie.com/embed/4oNIn2sBPoI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
               <p class="press__quote">A sit-down with host George Alger on the accelerator, what separates the founders who make it, and when to raise venture capital &mdash; and when not to.</p>
               <div class="press__meta">
                 <a class="ds-btn ds-btn--link" href="https://ourventura.com/startup-ventura-connecting-early-stage-founders-with-mentors-and-funding/" target="_blank" rel="noopener">Watch the interview <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
@@ -921,7 +951,8 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
             <div class="press__card">
               <div class="press__outlet">The Hustle &middot; VC Locals Only</div>
               <h2 class="ds-display press__headline"><a class="press__headline-link" href="https://www.youtube.com/watch?v=EVHIP8QqFnc" target="_blank" rel="noopener">Can Ventura become California&rsquo;s next startup&nbsp;hub?</a></h2>
-              <div class="press__player"><iframe title="The Hustle Ep 1: Can Ventura become California's next startup hub?" src="https://www.youtube.com/embed/EVHIP8QqFnc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+              <div class="press__player"><iframe title="The Hustle Ep 1: Can Ventura become California's next startup hub?" src="https://www.youtube-nocookie.com/embed/EVHIP8QqFnc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+              <p class="press__quote">Host Michael Buckley, owner of Ventura Meat Company, on AI, keeping talent and high-paying jobs in Ventura, and what makes an entrepreneur succeed.</p>
               <div class="press__meta">
                 <a class="ds-btn ds-btn--link" href="https://www.youtube.com/watch?v=EVHIP8QqFnc" target="_blank" rel="noopener">Watch on YouTube <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
                 <span class="press__date">Episode 1 &middot; September 2026</span>
@@ -938,7 +969,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
               </div>
             </div>
           </div>
-          <div style="margin-top:16px;text-align:center"><a class="ds-btn ds-btn--link" href="/press">Writing about Luke? Grab the press kit <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></div>
+          <div style="margin-top:16px;text-align:center"><a class="ds-btn ds-btn--link" href="/press/">Writing about Luke? Grab the press kit <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></div>
         </div>
       </div>
     </section>
@@ -962,7 +993,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
               <span class="ds-tag ds-tag--neutral">Community</span>
               <span class="ds-tag ds-tag--coral">Public speaking</span>
             </div>
-            <a class="ds-btn ds-btn--link" href="/about/me">Read my full story <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+            <a class="ds-btn ds-btn--link" href="/about/me/">Read my full story <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
           </div>
         </div>
       </div>
@@ -977,7 +1008,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
         </div>
         <div class="sv-grid reveal">
           <div class="ds-prose sv-story">
-            <p>Ventura County used to have a startup engine &mdash; a small incubator at City Hall that helped launch companies like <strong>The Trade Desk</strong> and <strong>GiddyUp</strong>. When it closed, the talent didn't leave. I founded <a class="ds-link" href="https://startupventura.com/" target="_blank" rel="noopener">Startup Ventura</a> to bring it back, with early backing from city leaders like Doug Halter and Jim Duran.</p>
+            <p>Ventura County used to have a startup engine &mdash; a small incubator at City Hall that helped launch companies like <strong>The Trade Desk</strong> and <strong>GiddyUp</strong>. When it closed, the talent kept leaving. I founded <a class="ds-link" href="https://startupventura.com/" target="_blank" rel="noopener">Startup Ventura</a> to bring it back, with early backing from city leaders like Doug Halter and Jim Duran.</p>
             <p>We back the builders this coast actually produces &mdash; creators, gamers, and founders &mdash; and we go all in with them. Our companies build alongside partners like Passes, Fanfix, Cloud9, Moxy, and Karat Financial.</p>
           </div>
           <aside class="ds-card ds-card--glass sv-card">
@@ -1046,7 +1077,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           </li>
         </ol>
         <div class="xp__more">
-          <a class="ds-btn ds-btn--link" href="/resume">View the full r&eacute;sum&eacute; <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+          <a class="ds-btn ds-btn--link" href="/resume/">View the full r&eacute;sum&eacute; <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
         </div>
       </div>
     </section>
@@ -1081,11 +1112,11 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <a class="ds-card kit-card guide-card give-card" href="https://thewebsitegrant.com" target="_blank" rel="noopener">
             <span class="kit-label">Founder</span>
             <h3 class="talk__title">The Website Grant</h3>
-            <p class="talk__abs">I started it to give nonprofits an affordable way to replace an outdated website: a full design system, the build, revisions, domain setup, and hosting with no end date &mdash; for $1,000, against the $5,000 to $20,000 an agency typically charges. Small businesses are welcome too.</p>
+            <p class="talk__abs">I started it to give nonprofits an affordable way to replace an outdated website: a full design system, the build, revisions, domain setup, and hosting with no end date. Nonprofits pay $2,000 and small businesses $2,500, against the $5,000 to $20,000 an agency typically charges.</p>
             <span class="ds-btn ds-btn--link">Visit The Website Grant <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
           </a>
         </div>
-        <p class="give-also reveal"><b>Also:</b> Rotary Club of Ventura (Rookie Rotarian of the Year, 2025) &middot; mentoring students at CSU Channel Islands &middot; teaching entrepreneurship at the Boys &amp; Girls Club of Greater Ventura.</p>
+        <p class="give-also reveal"><b>Also:</b> Rotary Club of Ventura (Rookie Rotarian of the Year, 2025) &middot; mentoring students at CSU Channel Islands &middot; an entrepreneurship class at the Boys &amp; Girls Club of Greater Ventura.</p>
       </div>
     </section>
 
@@ -1097,7 +1128,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
             <span class="ds-eyebrow ds-eyebrow--line">Speaking</span>
             <h2 class="ds-display" style="font-size:var(--text-display-md);max-width:14ch">Talks on building, selling, and breaking in.</h2>
             <p class="ds-prose" style="max-width:46ch">I speak to founders, sales teams, and rooms full of people figuring out their next move &mdash; direct, specific, and built from doing the work rather than theorizing about it.</p>
-            <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:22px"><a class="ds-btn ds-btn--primary" href="#contact" style="margin-top:0">Book me to speak <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a> <a class="ds-btn ds-btn--link" href="/speaking">Full speaker kit <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></div>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:22px"><a class="ds-btn ds-btn--primary" href="#contact" style="margin-top:0">Book me to speak <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a> <a class="ds-btn ds-btn--link" href="/speaking/">Full speaker kit <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></div>
           </div>
           <div class="speak__body">
             <div class="speak__block">
@@ -1224,22 +1255,22 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <h2 class="ds-display" style="font-size:var(--text-display-md)">Longer answers, written down.</h2>
         </div>
         <div class="kit-grid reveal" style="margin-top:26px">
-      <a class="ds-card kit-card guide-card" href="/mentorship">
+      <a class="ds-card kit-card guide-card" href="/mentorship/">
             <h3 class="talk__title">Startup mentorship in Ventura County</h3>
-            <p class="talk__abs">How I mentor &mdash; and every free option in the county, honestly listed.</p>
+            <p class="talk__abs">How I mentor, plus the main free options in the county.</p>
             <span class="ds-btn ds-btn--link">Read the guide <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
           </a>
-      <a class="ds-card kit-card guide-card" href="/guides/angel-investors-ventura-county">
+      <a class="ds-card kit-card guide-card" href="/guides/angel-investors-ventura-county/">
             <h3 class="talk__title">Angel investors in Ventura County</h3>
             <p class="talk__abs">No directory exists. How founders actually raise here.</p>
             <span class="ds-btn ds-btn--link">Read the guide <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
           </a>
-      <a class="ds-card kit-card guide-card" href="/guides/start-a-nonprofit-in-your-20s">
+      <a class="ds-card kit-card guide-card" href="/guides/start-a-nonprofit-in-your-20s/">
             <h3 class="talk__title">Start a nonprofit in your 20s</h3>
             <p class="talk__abs">The playbook from founding Startup Ventura at 24.</p>
             <span class="ds-btn ds-btn--link">Read the guide <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
           </a>
-      <a class="ds-card kit-card guide-card" href="/guides/join-a-board-in-your-20s">
+      <a class="ds-card kit-card guide-card" href="/guides/join-a-board-in-your-20s/">
             <h3 class="talk__title">Join a board in your 20s</h3>
             <p class="talk__abs">From the symphony&rsquo;s youngest-ever board member.</p>
             <span class="ds-btn ds-btn--link">Read the guide <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></span>
@@ -1317,18 +1348,18 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <span class="ds-wordmark__name">Luke Erickson</span>
         </a>
         <nav class="footer__nav" aria-label="Footer">
-          <a href="/about/me">My story</a>
+          <a href="/about/me/">My story</a>
           <a href="#experience">Experience</a>
           <a href="#moments">Moments</a>
-          <a href="/speaking">Speaking</a>
+          <a href="/speaking/">Speaking</a>
           <a href="#guides">Guides</a>
-          <a href="/press">Press kit</a>
-          <a href="/resume">Resume</a>
+          <a href="/press/">Press kit</a>
+          <a href="/resume/">Resume</a>
           <a href="#contact">Contact</a>
-          <a href="/privacy">Privacy</a>
+          <a href="/privacy/">Privacy</a>
         </nav>
         <div class="footer__meta">
-          <button class="motion-toggle" id="motionToggle" type="button" aria-label="Change motion level">Motion: rich</button>
+          <button class="motion-toggle" id="motionToggle" type="button" aria-label="Motion: full, change motion level">Motion: full</button>
           <span class="footer__copy">© <span id="year">2026</span> Luke Erickson</span>
         </div>
       </div>

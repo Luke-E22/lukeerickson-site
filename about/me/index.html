@@ -12,7 +12,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 
 <title>Luke Erickson — My Story</title>
 <meta name="description" content="Luke Erickson's story: from Hudson, Wisconsin to founding Startup Ventura — a path through small business, sales, and entrepreneurship in Ventura, California." />
-<link rel="canonical" href="https://lukeerickson.com/about/me" />
+<link rel="canonical" href="https://lukeerickson.com/about/me/" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="author" content="Luke Erickson" />
 <meta name="theme-color" content="#181D24" />
@@ -21,7 +21,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 <meta property="og:site_name" content="Luke Erickson" />
 <meta property="og:title" content="Luke Erickson — My Story" />
 <meta property="og:description" content="From Hudson, Wisconsin to founding Startup Ventura — Luke Erickson's path through small business, sales, and entrepreneurship." />
-<meta property="og:url" content="https://lukeerickson.com/about/me" />
+<meta property="og:url" content="https://lukeerickson.com/about/me/" />
 <meta property="og:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -34,7 +34,6 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/luke-erickson-hero-480.avif 480w, /assets/img/luke-erickson-hero-720.avif 720w, /assets/img/luke-erickson-hero-960.avif 960w" imagesizes="340px" fetchpriority="high" />
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/newsreader-300.woff2" crossorigin />
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/hanken-grotesk-400.woff2" crossorigin />
-<link rel="preload" as="style" href="/assets/css/styles.css" />
 <style data-inline-css>
 /* ============================================================
    Luke Erickson — lukeerickson.com
@@ -65,7 +64,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   --color-border:var(--sky-200);--color-border-strong:var(--sky-300);
   --text-primary:var(--ink-800);--text-secondary:var(--ink-600);--text-muted:#69727F;--text-faint:var(--ink-400);
   --text-on-ink:#F4F7FB;--text-on-coral:var(--ink-900);
-  --accent-blue:var(--blue-500);--accent-blue-ink:var(--blue-700);--accent-coral:var(--coral-500);--accent-coral-ink:var(--coral-700);
+  --accent-blue:var(--blue-500);--accent-blue-ink:var(--blue-700);--accent-coral:var(--coral-500);--accent-coral-ink:#A35E4D;
   --logo-l:#5B6675;--logo-e:#5B6675;
   --link:var(--blue-700);--link-hover:#355E86;--focus-ring:rgba(123,167,209,.55);
   --color-bg-deep:var(--sky-150);--color-surface-2:var(--sky-50);--color-input-bg:var(--white);--glass-border:rgba(255,255,255,.6);--color-hover-surface:var(--sky-100);
@@ -111,7 +110,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   --color-bg:#181D24;--color-bg-deep:#0E1217;--color-bg-tint:#1E242D;--color-surface:#232B35;--color-surface-sunken:#14181E;--color-surface-2:#2A3340;
   --color-surface-translucent:rgba(31,38,47,.62);--color-input-bg:#1B212A;--glass-border:rgba(255,255,255,.10);
   --color-border:rgba(180,198,219,.12);--color-border-strong:rgba(180,198,219,.22);
-  --text-primary:#E7ECF3;--text-secondary:#AEB9C7;--text-muted:#818D9C;--text-faint:#5E6A78;--text-on-coral:#20262E;
+  --text-primary:#E7ECF3;--text-secondary:#AEB9C7;--text-muted:#8994A2;--text-faint:#5E6A78;--text-on-coral:#20262E;
   --accent-blue:#8FB8DE;--accent-blue-ink:#A9C6E2;--accent-coral:#F0A292;--accent-coral-ink:#F2B3A6;
   --link:#A9C6E2;--link-hover:#C7DBEE;--focus-ring:rgba(143,184,222,.50);
   --logo-l:#C9D2DD;--logo-e:#C9D2DD;
@@ -573,6 +572,38 @@ picture{display:contents;}
 .give-lede{max-width:58ch;margin:0;color:var(--text-secondary);font-size:var(--text-body-lg);line-height:1.6;}
 .give-also{margin:22px 0 0;max-width:72ch;color:var(--text-muted);font-size:var(--text-body-sm);line-height:1.6;}
 .give-also b{color:var(--text-secondary);font-weight:600;}
+
+/* ---------------- Audit quick wins (2026-11-07) ---------------- */
+.nav-link[aria-current="page"]{color:var(--text-primary);}
+/* Copy buttons sit top-right of bio cards; keep labels clear of them */
+.bio-card > .kit-label{padding-right:84px;}
+/* Attribution under a press-card quote */
+.press__by{margin:-10px 0 20px;font-family:var(--font-sans);font-size:var(--text-caption);letter-spacing:.04em;color:var(--text-muted);}
+/* Closing "Get in touch" card on mentorship + guides; inline button under the mentorship intro */
+.page-cta{margin-top:clamp(40px,5vw,56px);}
+.page-cta__inline{margin:22px 0 8px;}
+/* Press "Photos from the field": even 4:5 thumbnails centered on Luke (Download keeps the full photo) */
+.field-grid{align-items:stretch;}
+.field-grid .headshot-card{display:flex;flex-direction:column;}
+.field-frame{aspect-ratio:4/5;margin-bottom:14px;border-radius:var(--radius-md);overflow:hidden;}
+.field-frame picture{display:block;width:100%;height:100%;}
+.field-frame img{width:100%;height:100%;object-fit:cover;margin:0;border-radius:0;}
+.field-frame img[src*="popl-nasdaq"]{object-position:50% 85%;}
+.field-frame img[src*="speaking"]{object-position:50% 30%;}
+.field-grid .headshot-card__row{margin-top:auto;flex-direction:column;align-items:flex-start;}
+/* Philanthropy cards: equal heights per row, links aligned at the bottom */
+.kit-grid > .give-card{align-self:stretch;}
+/* Phones: 44px minimum tap targets for nav, footer and button links */
+@media (max-width:880px){
+  .site-header .ds-wordmark,.footer .ds-wordmark{min-height:44px;min-width:44px;}
+  .site-header.nav-open .site-nav__links{gap:2px;}
+  .site-header.nav-open .nav-link{display:flex;align-items:center;min-height:44px;}
+  .ds-btn--sm{min-height:44px;}
+  .footer__nav{gap:0 22px;}
+  .footer__nav a,.motion-toggle{display:inline-flex;align-items:center;min-height:44px;}
+  a.contact__line{align-items:center;min-height:44px;}
+  .seen-row a{display:inline-flex;align-items:center;min-height:44px;}
+}
 </style>
 
 <link rel="icon" type="image/svg+xml" href="/assets/logo/LE-monogram.svg" />
@@ -586,12 +617,12 @@ picture{display:contents;}
   "@graph": [
     {
       "@type": "ProfilePage",
-      "@id": "https://lukeerickson.com/about/me#page",
-      "url": "https://lukeerickson.com/about/me",
+      "@id": "https://lukeerickson.com/about/me/#page",
+      "url": "https://lukeerickson.com/about/me/",
       "name": "Luke Erickson — My Story",
       "description": "The personal story of Luke Erickson — from Hudson, Wisconsin to founding Startup Ventura.",
       "mainEntity": { "@id": "https://lukeerickson.com/#luke" },
-      "breadcrumb": { "@id": "https://lukeerickson.com/about/me#breadcrumb" },
+      "breadcrumb": { "@id": "https://lukeerickson.com/about/me/#breadcrumb" },
       "primaryImageOfPage": "https://lukeerickson.com/assets/og/luke-erickson-og.jpg"
     },
     {
@@ -619,7 +650,7 @@ picture{display:contents;}
       "award": "Rookie Rotarian of the Year, Rotary Club of Ventura (2025)",
       "image": "https://lukeerickson.com/assets/og/luke-erickson-og.jpg",
       "url": "https://lukeerickson.com/",
-      "mainEntityOfPage": "https://lukeerickson.com/about/me",
+      "mainEntityOfPage": "https://lukeerickson.com/about/me/",
       "sameAs": [
         "https://startupventura.com",
         "https://startupventura.com/lukeerickson",
@@ -699,10 +730,10 @@ picture{display:contents;}
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://lukeerickson.com/about/me#breadcrumb",
+      "@id": "https://lukeerickson.com/about/me/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lukeerickson.com/" },
-        { "@type": "ListItem", "position": 2, "name": "My Story", "item": "https://lukeerickson.com/about/me" }
+        { "@type": "ListItem", "position": 2, "name": "My Story", "item": "https://lukeerickson.com/about/me/" }
       ]
     }
   ]
@@ -758,12 +789,11 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
       </a>
       <nav class="site-nav" aria-label="Primary">
         <div class="site-nav__links" id="navLinks">
-          <a class="nav-link" href="/about/me" aria-current="page">My story</a>
-          <a class="nav-link" href="/#experience">Experience</a>
-          <a class="nav-link" href="/#moments">Moments</a>
-          <a class="nav-link" href="/speaking">Speaking</a>
+          <a class="nav-link" href="/about/me/" aria-current="page">My story</a>
+          <a class="nav-link" href="/speaking/">Speaking</a>
+          <a class="nav-link" href="/press/">Press</a>
           <a class="nav-link" href="/#guides">Guides</a>
-          <a class="nav-link" href="/resume">Resume</a>
+          <a class="nav-link" href="/resume/">Resume</a>
         </div>
         <button class="ds-iconbtn" id="themeToggle" type="button" aria-label="Switch theme">
           <svg class="icon" id="themeIcon" aria-hidden="true"><use href="#i-sun"/></svg>
@@ -804,7 +834,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <p>Which brings me to now. I founded <a class="ds-link" href="https://startupventura.com/lukeerickson" target="_blank" rel="noopener"><strong>Startup Ventura</strong></a> because I kept meeting talented people in Ventura County who had a real idea and nowhere to take it. I wanted to give early founders what I wish I'd had at the start — a community, a room to think out loud, and people who have done it before. We built it as a 501(c)(3) tech accelerator, and I assembled a board of operators whose companies carry billions of dollars in combined exit value. The goal is simple and stubborn: keep Ventura County a place where it is possible to start something and stay.</p>
 
           <h2>Outside the work</h2>
-          <p>Away from the desk, community is where I put my energy. I'm the youngest-ever board member of the <a class="ds-link" href="https://newwestsymphony.org/about/board/" target="_blank" rel="noopener">New West Symphony</a>, where I helped plan its America 250 tribute and the first symphony concert ever held at the Ronald Reagan Presidential Library &mdash; a premiere <a class="ds-link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">featured in Los Angeles Wire</a>. I'm active in the <strong>Rotary Club of Ventura</strong>, which named me its Rookie Rotarian of the Year for service to the community. In 2026 I joined the board of directors of the <a class="ds-link" href="https://serracrosspark.com" target="_blank" rel="noopener">Serra Cross Conservancy</a>, the nonprofit that cares for Serra Cross Park on the hill above City Hall &mdash; where my focus is preserving the park and modernizing its website and wedding-booking workflow. And I speak whenever I get the chance.</p>
+          <p>Away from the desk, community is where I put my energy. I'm the youngest-ever board member of the <a class="ds-link" href="https://newwestsymphony.org/about/board/" target="_blank" rel="noopener">New West Symphony</a>, where I chaired its America 250 Taskforce and produced the first symphony concert ever held at the Ronald Reagan Presidential Library &mdash; a premiere <a class="ds-link" href="https://lawire.com/luke-erickson-and-immanuel-portus-bring-reagans-story-to-life-through-a-historic-symphony-under-air-force-one/" target="_blank" rel="noopener">featured in Los Angeles Wire</a>. I'm active in the <strong>Rotary Club of Ventura</strong>, which named me its Rookie Rotarian of the Year for service to the community. In 2026 I joined the board of directors of the <a class="ds-link" href="https://serracrosspark.com" target="_blank" rel="noopener">Serra Cross Conservancy</a>, the nonprofit that cares for Serra Cross Park on the hill above City Hall &mdash; where my focus is preserving the park and modernizing its website and wedding-booking workflow. And I speak whenever I get the chance.</p>
           <p>Above all, I'm a steadfast Christian, and my faith is the foundation under everything else. It is why I try to plant a seed of Christ in everyone I meet and water it whenever I can &mdash; and why I believe a life is measured less by what you accumulate than by what you give and who you lift along the way. Off the clock, I ski, I'm stubbornly improving my German, and I care about building things that outlast me.</p>
         </div>
 
@@ -830,7 +860,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           </div>
         </div>
 
-        <p class="story__back"><a class="ds-btn ds-btn--link" href="/resume">See the full r&eacute;sum&eacute; <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></p>
+        <p class="story__back"><a class="ds-btn ds-btn--link" href="/resume/">See the full r&eacute;sum&eacute; <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></p>
       </div>
     </article>
   </main>
@@ -846,18 +876,18 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <span class="ds-wordmark__name">Luke Erickson</span>
         </a>
         <nav class="footer__nav" aria-label="Footer">
-          <a href="/about/me">My story</a>
+          <a href="/about/me/">My story</a>
           <a href="/#experience">Experience</a>
           <a href="/#moments">Moments</a>
-          <a href="/speaking">Speaking</a>
+          <a href="/speaking/">Speaking</a>
           <a href="/#guides">Guides</a>
-          <a href="/press">Press kit</a>
-          <a href="/resume">Resume</a>
+          <a href="/press/">Press kit</a>
+          <a href="/resume/">Resume</a>
           <a href="/#contact">Contact</a>
-          <a href="/privacy">Privacy</a>
+          <a href="/privacy/">Privacy</a>
         </nav>
         <div class="footer__meta">
-          <button class="motion-toggle" id="motionToggle" type="button" aria-label="Change motion level">Motion: rich</button>
+          <button class="motion-toggle" id="motionToggle" type="button" aria-label="Motion: full, change motion level">Motion: full</button>
           <span class="footer__copy">© <span id="year">2026</span> Luke Erickson</span>
         </div>
       </div>

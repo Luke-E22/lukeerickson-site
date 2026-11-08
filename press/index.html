@@ -13,7 +13,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 
 <title>Press &amp; Media Kit &mdash; Luke Erickson</title>
 <meta name="description" content="Press kit for Luke Erickson, founder and executive director of Startup Ventura: boilerplate bios, downloadable headshots, fast facts, and recent coverage." />
-<link rel="canonical" href="https://lukeerickson.com/press" />
+<link rel="canonical" href="https://lukeerickson.com/press/" />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Luke Erickson" />
 <meta name="theme-color" content="#181D24" />
@@ -21,7 +21,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 <meta property="og:site_name" content="Luke Erickson" />
 <meta property="og:title" content="Press &amp; Media Kit &mdash; Luke Erickson" />
 <meta property="og:description" content="Bios, headshots, facts, and coverage for media." />
-<meta property="og:url" content="https://lukeerickson.com/press" />
+<meta property="og:url" content="https://lukeerickson.com/press/" />
 <meta property="og:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -65,7 +65,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   --color-border:var(--sky-200);--color-border-strong:var(--sky-300);
   --text-primary:var(--ink-800);--text-secondary:var(--ink-600);--text-muted:#69727F;--text-faint:var(--ink-400);
   --text-on-ink:#F4F7FB;--text-on-coral:var(--ink-900);
-  --accent-blue:var(--blue-500);--accent-blue-ink:var(--blue-700);--accent-coral:var(--coral-500);--accent-coral-ink:var(--coral-700);
+  --accent-blue:var(--blue-500);--accent-blue-ink:var(--blue-700);--accent-coral:var(--coral-500);--accent-coral-ink:#A35E4D;
   --logo-l:#5B6675;--logo-e:#5B6675;
   --link:var(--blue-700);--link-hover:#355E86;--focus-ring:rgba(123,167,209,.55);
   --color-bg-deep:var(--sky-150);--color-surface-2:var(--sky-50);--color-input-bg:var(--white);--glass-border:rgba(255,255,255,.6);--color-hover-surface:var(--sky-100);
@@ -111,7 +111,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   --color-bg:#181D24;--color-bg-deep:#0E1217;--color-bg-tint:#1E242D;--color-surface:#232B35;--color-surface-sunken:#14181E;--color-surface-2:#2A3340;
   --color-surface-translucent:rgba(31,38,47,.62);--color-input-bg:#1B212A;--glass-border:rgba(255,255,255,.10);
   --color-border:rgba(180,198,219,.12);--color-border-strong:rgba(180,198,219,.22);
-  --text-primary:#E7ECF3;--text-secondary:#AEB9C7;--text-muted:#818D9C;--text-faint:#5E6A78;--text-on-coral:#20262E;
+  --text-primary:#E7ECF3;--text-secondary:#AEB9C7;--text-muted:#8994A2;--text-faint:#5E6A78;--text-on-coral:#20262E;
   --accent-blue:#8FB8DE;--accent-blue-ink:#A9C6E2;--accent-coral:#F0A292;--accent-coral-ink:#F2B3A6;
   --link:#A9C6E2;--link-hover:#C7DBEE;--focus-ring:rgba(143,184,222,.50);
   --logo-l:#C9D2DD;--logo-e:#C9D2DD;
@@ -573,6 +573,38 @@ picture{display:contents;}
 .give-lede{max-width:58ch;margin:0;color:var(--text-secondary);font-size:var(--text-body-lg);line-height:1.6;}
 .give-also{margin:22px 0 0;max-width:72ch;color:var(--text-muted);font-size:var(--text-body-sm);line-height:1.6;}
 .give-also b{color:var(--text-secondary);font-weight:600;}
+
+/* ---------------- Audit quick wins (2026-11-07) ---------------- */
+.nav-link[aria-current="page"]{color:var(--text-primary);}
+/* Copy buttons sit top-right of bio cards; keep labels clear of them */
+.bio-card > .kit-label{padding-right:84px;}
+/* Attribution under a press-card quote */
+.press__by{margin:-10px 0 20px;font-family:var(--font-sans);font-size:var(--text-caption);letter-spacing:.04em;color:var(--text-muted);}
+/* Closing "Get in touch" card on mentorship + guides; inline button under the mentorship intro */
+.page-cta{margin-top:clamp(40px,5vw,56px);}
+.page-cta__inline{margin:22px 0 8px;}
+/* Press "Photos from the field": even 4:5 thumbnails centered on Luke (Download keeps the full photo) */
+.field-grid{align-items:stretch;}
+.field-grid .headshot-card{display:flex;flex-direction:column;}
+.field-frame{aspect-ratio:4/5;margin-bottom:14px;border-radius:var(--radius-md);overflow:hidden;}
+.field-frame picture{display:block;width:100%;height:100%;}
+.field-frame img{width:100%;height:100%;object-fit:cover;margin:0;border-radius:0;}
+.field-frame img[src*="popl-nasdaq"]{object-position:50% 85%;}
+.field-frame img[src*="speaking"]{object-position:50% 30%;}
+.field-grid .headshot-card__row{margin-top:auto;flex-direction:column;align-items:flex-start;}
+/* Philanthropy cards: equal heights per row, links aligned at the bottom */
+.kit-grid > .give-card{align-self:stretch;}
+/* Phones: 44px minimum tap targets for nav, footer and button links */
+@media (max-width:880px){
+  .site-header .ds-wordmark,.footer .ds-wordmark{min-height:44px;min-width:44px;}
+  .site-header.nav-open .site-nav__links{gap:2px;}
+  .site-header.nav-open .nav-link{display:flex;align-items:center;min-height:44px;}
+  .ds-btn--sm{min-height:44px;}
+  .footer__nav{gap:0 22px;}
+  .footer__nav a,.motion-toggle{display:inline-flex;align-items:center;min-height:44px;}
+  a.contact__line{align-items:center;min-height:44px;}
+  .seen-row a{display:inline-flex;align-items:center;min-height:44px;}
+}
 </style>
 
 <!-- Google Analytics (GA4) -->
@@ -590,18 +622,18 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://lukeerickson.com/press",
-      "url": "https://lukeerickson.com/press",
+      "@id": "https://lukeerickson.com/press/",
+      "url": "https://lukeerickson.com/press/",
       "name": "Luke Erickson — Press & Media Kit",
       "about": { "@id": "https://lukeerickson.com/#luke" },
-      "breadcrumb": { "@id": "https://lukeerickson.com/press#breadcrumb" }
+      "breadcrumb": { "@id": "https://lukeerickson.com/press/#breadcrumb" }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://lukeerickson.com/press#breadcrumb",
+      "@id": "https://lukeerickson.com/press/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lukeerickson.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Press kit", "item": "https://lukeerickson.com/press" }
+        { "@type": "ListItem", "position": 2, "name": "Press kit", "item": "https://lukeerickson.com/press/" }
       ]
     }
   ]
@@ -641,10 +673,11 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
       </a>
       <nav class="site-nav" aria-label="Primary">
         <div class="site-nav__links" id="navLinks">
-          <a class="nav-link" href="/about/me">My story</a>
-          <a class="nav-link" href="/speaking">Speaking</a>
+          <a class="nav-link" href="/about/me/">My story</a>
+          <a class="nav-link" href="/speaking/">Speaking</a>
+          <a class="nav-link" href="/press/" aria-current="page">Press</a>
           <a class="nav-link" href="/#guides">Guides</a>
-          <a class="nav-link" href="/resume">Resume</a>
+          <a class="nav-link" href="/resume/">Resume</a>
         </div>
         <button class="ds-iconbtn" id="themeToggle" type="button" aria-label="Switch theme">
           <svg class="icon" id="themeIcon" aria-hidden="true"><use href="#i-sun"/></svg>
@@ -673,12 +706,12 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
               <button class="ds-btn ds-btn--secondary ds-btn--sm copy-btn" type="button" data-copy="#bio-50">Copy</button>
             </div>
             <div class="ds-card kit-card bio-card">
-              <h3 class="kit-label">Medium — about 100 words</h3>
+              <h3 class="kit-label">Medium — about 115 words</h3>
               <div class="bio-card__text" id="bio-100"><p>Luke Erickson is the founder and executive director of Startup Ventura, a 501(c)(3) tech accelerator built on a simple conviction: Ventura County raises ambitious, talented people, then loses them to bigger startup hubs because there was nowhere local to build. Startup Ventura gives founders mentorship, capital connections, and community &mdash; keeping the talent, the companies, and the jobs home. Under his leadership, the organization secured a founding investment from the City of Ventura and earned Candid&rsquo;s Platinum Seal of Transparency. A ten-year sales and go-to-market operator, Erickson built and exited the creator-economy fintech One Tap and led business development at Popl. He serves on the New West Symphony board and mentors students at CSU Channel Islands.</p></div>
               <button class="ds-btn ds-btn--secondary ds-btn--sm copy-btn" type="button" data-copy="#bio-100">Copy</button>
             </div>
             <div class="ds-card kit-card bio-card">
-              <h3 class="kit-label">Long — about 200 words</h3>
+              <h3 class="kit-label">Long — about 285 words</h3>
               <div class="bio-card__text" id="bio-200"><p>Luke Erickson is the founder and executive director of Startup Ventura, a 501(c)(3) tech accelerator serving Ventura County, California. He founded the organization after watching a problem play out for years: the county raises ambitious, talented people, educates them at strong local universities, and then loses them to larger startup hubs because there was nowhere local to build &mdash; a gap even high-growth local companies like the logistics startup Curri have felt in the hunt for talent. Startup Ventura&rsquo;s answer is mentorship, capital connections, and community that give founders a reason to stay: keep the talent, build the companies, and let jobs and investment follow.</p><p>Under his leadership, Startup Ventura earned its 501(c)(3) status, secured a founding investment from the City of Ventura, and was awarded Candid&rsquo;s Platinum Seal of Transparency &mdash; the highest level, held by fewer than one percent of U.S. nonprofits. Its first annual benefit drew 75 supporters and raised funds toward an inaugural cohort of founders launching in spring 2027.</p><p>Erickson&rsquo;s conviction comes from doing the work: he built and exited the creator-economy fintech One Tap and led the business development team at Popl, generating more than $14 million in career sales pipeline across ten years of carrying a quota. He is the youngest-ever board member of the New West Symphony &mdash; where he produced the first symphony concert held at the Ronald Reagan Presidential Library &mdash; serves on the board of directors of the Serra Cross Conservancy, steward of Ventura&rsquo;s Serra Cross Park, mentors students at CSU Channel Islands, and works closely with the region&rsquo;s civic and economic development organizations. Raised in Hudson, Wisconsin, and a former collegiate lacrosse player, he brings the same competitive discipline to building institutions that last.</p></div>
               <button class="ds-btn ds-btn--secondary ds-btn--sm copy-btn" type="button" data-copy="#bio-200">Copy</button>
             </div>
@@ -697,12 +730,12 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
         <p class="ds-prose" style="max-width:54ch;margin-bottom:18px">Free for editorial use with the credit &ldquo;Courtesy of Luke Erickson.&rdquo;</p>
         <div class="kit-grid">
           <div class="ds-card kit-card headshot-card">
-            <img src="/assets/img/luke-erickson-portrait.jpg" width="1200" height="1200" alt="Luke Erickson headshot, square crop" loading="lazy" decoding="async" />
+            <picture><source type="image/avif" srcset="/assets/img/luke-erickson-portrait-480.avif 480w, /assets/img/luke-erickson-portrait-720.avif 720w" sizes="(max-width:840px) 92vw, 520px"><source type="image/webp" srcset="/assets/img/luke-erickson-portrait-480.webp 480w, /assets/img/luke-erickson-portrait-720.webp 720w" sizes="(max-width:840px) 92vw, 520px"><img src="/assets/img/luke-erickson-portrait.jpg" width="1200" height="1200" alt="Luke Erickson headshot, square crop" loading="lazy" decoding="async" /></picture>
             <div class="headshot-card__row"><span>Square &middot; 1200&times;1200</span>
             <a class="ds-btn ds-btn--secondary ds-btn--sm" href="/assets/img/luke-erickson-portrait.jpg" download="luke-erickson-headshot-square.jpg">Download <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></span></a></div>
           </div>
           <div class="ds-card kit-card headshot-card">
-            <img src="/assets/img/luke-erickson-hero.jpg" width="960" height="1200" alt="Luke Erickson headshot, vertical crop" loading="lazy" decoding="async" />
+            <picture><source type="image/avif" srcset="/assets/img/luke-erickson-hero-480.avif 480w, /assets/img/luke-erickson-hero-720.avif 720w" sizes="(max-width:840px) 92vw, 520px"><source type="image/webp" srcset="/assets/img/luke-erickson-hero-480.webp 480w, /assets/img/luke-erickson-hero-720.webp 720w" sizes="(max-width:840px) 92vw, 520px"><img src="/assets/img/luke-erickson-hero.jpg" width="960" height="1200" alt="Luke Erickson headshot, vertical crop" loading="lazy" decoding="async" /></picture>
             <div class="headshot-card__row"><span>Vertical &middot; 960&times;1200</span>
             <a class="ds-btn ds-btn--secondary ds-btn--sm" href="/assets/img/luke-erickson-hero.jpg" download="luke-erickson-headshot-vertical.jpg">Download <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></span></a></div>
           </div>
@@ -719,7 +752,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
             <li><b>Born</b> July 22, 2000</li>
             <li><b>Education</b> Business Management &mdash; University of Utah</li>
             <li><b>Boards &amp; service</b> Serra Cross Conservancy (board of directors; steward of Serra Cross Park, Ventura) &middot; New West Symphony (youngest-ever board member; chair, America 250 Taskforce) &middot; Rotary Club of Ventura (Rookie Rotarian of the Year)</li>
-            <li><b>Speaks on</b> Startup ecosystems in mid-size cities &middot; go-to-market &middot; in-person selling &middot; event marketing &middot; breaking into tech &mdash; <a class="ds-link" href="/speaking">speaker kit</a></li>
+            <li><b>Speaks on</b> Startup ecosystems in mid-size cities &middot; go-to-market &middot; in-person selling &middot; event marketing &middot; breaking into tech &mdash; <a class="ds-link" href="/speaking/">speaker kit</a></li>
           </ul>
         </div>
 
@@ -743,19 +776,19 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
 
         <h2 class="ds-display" style="font-size:var(--text-display-md);margin:52px 0 8px">Photos from the field</h2>
         <p class="ds-prose" style="max-width:54ch;margin-bottom:18px">Editorial use with credit &ldquo;Courtesy of Luke Erickson.&rdquo; Captions provided.</p>
-        <div class="kit-grid kit-grid--three">
+        <div class="kit-grid kit-grid--three field-grid">
           <div class="ds-card kit-card headshot-card">
-            <img src="/assets/img/gallery/luke-erickson-popl-nasdaq.jpg" width="665" height="1182" alt="Luke Erickson at Nasdaq, Times Square" loading="lazy" decoding="async" />
+            <div class="field-frame"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-popl-nasdaq-400.avif 400w, /assets/img/gallery/luke-erickson-popl-nasdaq-665.avif 665w" sizes="(max-width:840px) 92vw, 340px"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-popl-nasdaq-400.webp 400w, /assets/img/gallery/luke-erickson-popl-nasdaq-665.webp 665w" sizes="(max-width:840px) 92vw, 340px"><img src="/assets/img/gallery/luke-erickson-popl-nasdaq.jpg" width="665" height="1182" alt="Luke Erickson at Nasdaq, Times Square" loading="lazy" decoding="async" /></picture></div>
             <div class="headshot-card__row"><span>Popl&rsquo;s global rebrand at Nasdaq, Times Square</span>
             <a class="ds-btn ds-btn--secondary ds-btn--sm" href="/assets/img/gallery/luke-erickson-popl-nasdaq.jpg" download>Download</a></div>
           </div>
           <div class="ds-card kit-card headshot-card">
-            <img src="/assets/img/gallery/luke-erickson-new-west-symphony.jpg" width="1200" height="900" alt="Luke Erickson at a New West Symphony gala" loading="lazy" decoding="async" />
+            <div class="field-frame"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-new-west-symphony-400.avif 400w, /assets/img/gallery/luke-erickson-new-west-symphony-800.avif 800w" sizes="(max-width:840px) 92vw, 340px"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-new-west-symphony-400.webp 400w, /assets/img/gallery/luke-erickson-new-west-symphony-800.webp 800w" sizes="(max-width:840px) 92vw, 340px"><img src="/assets/img/gallery/luke-erickson-new-west-symphony.jpg" width="1200" height="900" alt="Luke Erickson at a New West Symphony gala" loading="lazy" decoding="async" /></picture></div>
             <div class="headshot-card__row"><span>New West Symphony gala</span>
             <a class="ds-btn ds-btn--secondary ds-btn--sm" href="/assets/img/gallery/luke-erickson-new-west-symphony.jpg" download>Download</a></div>
           </div>
           <div class="ds-card kit-card headshot-card">
-            <img src="/assets/img/gallery/luke-erickson-speaking.jpg" width="800" height="1200" alt="Luke Erickson speaking on stage" loading="lazy" decoding="async" />
+            <div class="field-frame"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-speaking-400.avif 400w, /assets/img/gallery/luke-erickson-speaking-800.avif 800w" sizes="(max-width:840px) 92vw, 340px"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-speaking-400.webp 400w, /assets/img/gallery/luke-erickson-speaking-800.webp 800w" sizes="(max-width:840px) 92vw, 340px"><img src="/assets/img/gallery/luke-erickson-speaking.jpg" width="800" height="1200" alt="Luke Erickson speaking on stage" loading="lazy" decoding="async" /></picture></div>
             <div class="headshot-card__row"><span>On the mic</span>
             <a class="ds-btn ds-btn--secondary ds-btn--sm" href="/assets/img/gallery/luke-erickson-speaking.jpg" download>Download</a></div>
           </div>
@@ -784,16 +817,16 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
         <span class="ds-wordmark__name">Luke Erickson</span>
       </a>
         <nav class="footer__nav" aria-label="Footer">
-          <a href="/about/me">My story</a>
-          <a href="/speaking">Speaking</a>
+          <a href="/about/me/">My story</a>
+          <a href="/speaking/">Speaking</a>
           <a href="/#guides">Guides</a>
-          <a href="/press">Press kit</a>
-          <a href="/resume">Resume</a>
+          <a href="/press/">Press kit</a>
+          <a href="/resume/">Resume</a>
           <a href="/#contact">Contact</a>
-          <a href="/privacy">Privacy</a>
+          <a href="/privacy/">Privacy</a>
         </nav>
         <div class="footer__meta">
-          <button class="motion-toggle" id="motionToggle" type="button" aria-label="Change motion level">Motion: rich</button>
+          <button class="motion-toggle" id="motionToggle" type="button" aria-label="Motion: full, change motion level">Motion: full</button>
           <span class="footer__copy">© <span id="year">2026</span> Luke Erickson</span>
         </div>
       </div>

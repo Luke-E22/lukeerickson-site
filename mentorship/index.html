@@ -12,23 +12,23 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
 <style>html[data-theme="dark"]{background:#181D24}html[data-theme="light"]{background:#F7F9FC}</style>
 
 <title>Startup Mentor in Ventura County &mdash; Luke Erickson (Plus Every Free Option)</title>
-<meta name="description" content="Looking for a startup mentor in Ventura County? How Luke Erickson mentors founders through Startup Ventura, and every free local option: SCORE, SBDC, WEV." />
-<link rel="canonical" href="https://lukeerickson.com/mentorship" />
+<meta name="description" content="Looking for a startup mentor in Ventura County? How Luke Erickson mentors founders through Startup Ventura, and the main free local options: SCORE, SBDC, WEV." />
+<link rel="canonical" href="https://lukeerickson.com/mentorship/" />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Luke Erickson" />
 <meta name="theme-color" content="#181D24" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Luke Erickson" />
 <meta property="og:title" content="Startup Mentor in Ventura County &mdash; Luke Erickson (Plus Every Free Option)" />
-<meta property="og:description" content="Looking for a startup mentor in Ventura County? How Luke Erickson mentors founders through Startup Ventura, and every free local option: SCORE, SBDC, WEV." />
-<meta property="og:url" content="https://lukeerickson.com/mentorship" />
+<meta property="og:description" content="Looking for a startup mentor in Ventura County? How Luke Erickson mentors founders through Startup Ventura, and the main free local options: SCORE, SBDC, WEV." />
+<meta property="og:url" content="https://lukeerickson.com/mentorship/" />
 <meta property="og:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Luke Erickson" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Startup Mentor in Ventura County &mdash; Luke Erickson (Plus Every Free Option)" />
-<meta name="twitter:description" content="Looking for a startup mentor in Ventura County? How Luke Erickson mentors founders through Startup Ventura, and every free local option: SCORE, SBDC, WEV." />
+<meta name="twitter:description" content="Looking for a startup mentor in Ventura County? How Luke Erickson mentors founders through Startup Ventura, and the main free local options: SCORE, SBDC, WEV." />
 <meta name="twitter:image" content="https://lukeerickson.com/assets/og/luke-erickson-og.jpg" />
 <link rel="icon" type="image/svg+xml" href="/assets/logo/LE-monogram.svg" />
 <link rel="apple-touch-icon" href="/assets/og/apple-touch-icon.png" />
@@ -65,7 +65,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   --color-border:var(--sky-200);--color-border-strong:var(--sky-300);
   --text-primary:var(--ink-800);--text-secondary:var(--ink-600);--text-muted:#69727F;--text-faint:var(--ink-400);
   --text-on-ink:#F4F7FB;--text-on-coral:var(--ink-900);
-  --accent-blue:var(--blue-500);--accent-blue-ink:var(--blue-700);--accent-coral:var(--coral-500);--accent-coral-ink:var(--coral-700);
+  --accent-blue:var(--blue-500);--accent-blue-ink:var(--blue-700);--accent-coral:var(--coral-500);--accent-coral-ink:#A35E4D;
   --logo-l:#5B6675;--logo-e:#5B6675;
   --link:var(--blue-700);--link-hover:#355E86;--focus-ring:rgba(123,167,209,.55);
   --color-bg-deep:var(--sky-150);--color-surface-2:var(--sky-50);--color-input-bg:var(--white);--glass-border:rgba(255,255,255,.6);--color-hover-surface:var(--sky-100);
@@ -111,7 +111,7 @@ try{var m=localStorage.getItem('luke-motion');if(!m){m=window.matchMedia&&window
   --color-bg:#181D24;--color-bg-deep:#0E1217;--color-bg-tint:#1E242D;--color-surface:#232B35;--color-surface-sunken:#14181E;--color-surface-2:#2A3340;
   --color-surface-translucent:rgba(31,38,47,.62);--color-input-bg:#1B212A;--glass-border:rgba(255,255,255,.10);
   --color-border:rgba(180,198,219,.12);--color-border-strong:rgba(180,198,219,.22);
-  --text-primary:#E7ECF3;--text-secondary:#AEB9C7;--text-muted:#818D9C;--text-faint:#5E6A78;--text-on-coral:#20262E;
+  --text-primary:#E7ECF3;--text-secondary:#AEB9C7;--text-muted:#8994A2;--text-faint:#5E6A78;--text-on-coral:#20262E;
   --accent-blue:#8FB8DE;--accent-blue-ink:#A9C6E2;--accent-coral:#F0A292;--accent-coral-ink:#F2B3A6;
   --link:#A9C6E2;--link-hover:#C7DBEE;--focus-ring:rgba(143,184,222,.50);
   --logo-l:#C9D2DD;--logo-e:#C9D2DD;
@@ -573,6 +573,38 @@ picture{display:contents;}
 .give-lede{max-width:58ch;margin:0;color:var(--text-secondary);font-size:var(--text-body-lg);line-height:1.6;}
 .give-also{margin:22px 0 0;max-width:72ch;color:var(--text-muted);font-size:var(--text-body-sm);line-height:1.6;}
 .give-also b{color:var(--text-secondary);font-weight:600;}
+
+/* ---------------- Audit quick wins (2026-11-07) ---------------- */
+.nav-link[aria-current="page"]{color:var(--text-primary);}
+/* Copy buttons sit top-right of bio cards; keep labels clear of them */
+.bio-card > .kit-label{padding-right:84px;}
+/* Attribution under a press-card quote */
+.press__by{margin:-10px 0 20px;font-family:var(--font-sans);font-size:var(--text-caption);letter-spacing:.04em;color:var(--text-muted);}
+/* Closing "Get in touch" card on mentorship + guides; inline button under the mentorship intro */
+.page-cta{margin-top:clamp(40px,5vw,56px);}
+.page-cta__inline{margin:22px 0 8px;}
+/* Press "Photos from the field": even 4:5 thumbnails centered on Luke (Download keeps the full photo) */
+.field-grid{align-items:stretch;}
+.field-grid .headshot-card{display:flex;flex-direction:column;}
+.field-frame{aspect-ratio:4/5;margin-bottom:14px;border-radius:var(--radius-md);overflow:hidden;}
+.field-frame picture{display:block;width:100%;height:100%;}
+.field-frame img{width:100%;height:100%;object-fit:cover;margin:0;border-radius:0;}
+.field-frame img[src*="popl-nasdaq"]{object-position:50% 85%;}
+.field-frame img[src*="speaking"]{object-position:50% 30%;}
+.field-grid .headshot-card__row{margin-top:auto;flex-direction:column;align-items:flex-start;}
+/* Philanthropy cards: equal heights per row, links aligned at the bottom */
+.kit-grid > .give-card{align-self:stretch;}
+/* Phones: 44px minimum tap targets for nav, footer and button links */
+@media (max-width:880px){
+  .site-header .ds-wordmark,.footer .ds-wordmark{min-height:44px;min-width:44px;}
+  .site-header.nav-open .site-nav__links{gap:2px;}
+  .site-header.nav-open .nav-link{display:flex;align-items:center;min-height:44px;}
+  .ds-btn--sm{min-height:44px;}
+  .footer__nav{gap:0 22px;}
+  .footer__nav a,.motion-toggle{display:inline-flex;align-items:center;min-height:44px;}
+  a.contact__line{align-items:center;min-height:44px;}
+  .seen-row a{display:inline-flex;align-items:center;min-height:44px;}
+}
 </style>
 
 <!-- Google Analytics (GA4) -->
@@ -590,20 +622,20 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://lukeerickson.com/mentorship#article",
+      "@id": "https://lukeerickson.com/mentorship/#article",
       "headline": "Startup mentorship in Ventura County.",
-      "url": "https://lukeerickson.com/mentorship",
+      "url": "https://lukeerickson.com/mentorship/",
       "datePublished": "2026-08-18",
       "dateModified": "2026-08-18",
       "author": { "@id": "https://lukeerickson.com/#luke" },
-      "mainEntityOfPage": "https://lukeerickson.com/mentorship"
+      "mainEntityOfPage": "https://lukeerickson.com/mentorship/"
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://lukeerickson.com/mentorship#breadcrumb",
+      "@id": "https://lukeerickson.com/mentorship/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lukeerickson.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Mentorship", "item": "https://lukeerickson.com/mentorship" }
+        { "@type": "ListItem", "position": 2, "name": "Mentorship", "item": "https://lukeerickson.com/mentorship/" }
       ]
     }
   ]
@@ -641,10 +673,11 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
       </a>
       <nav class="site-nav" aria-label="Primary">
         <div class="site-nav__links" id="navLinks">
-          <a class="nav-link" href="/about/me">My story</a>
-          <a class="nav-link" href="/speaking">Speaking</a>
+          <a class="nav-link" href="/about/me/">My story</a>
+          <a class="nav-link" href="/speaking/">Speaking</a>
+          <a class="nav-link" href="/press/">Press</a>
           <a class="nav-link" href="/#guides">Guides</a>
-          <a class="nav-link" href="/resume">Resume</a>
+          <a class="nav-link" href="/resume/">Resume</a>
         </div>
         <button class="ds-iconbtn" id="themeToggle" type="button" aria-label="Switch theme">
           <svg class="icon" id="themeIcon" aria-hidden="true"><use href="#i-sun"/></svg>
@@ -664,7 +697,8 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
         <h1 class="ds-display" style="font-size:var(--text-display-lg);margin:14px 0 10px;max-width:20ch">Startup mentorship in Ventura County.</h1>
         <p style="color:var(--text-muted);font-size:var(--text-body-sm);margin-bottom:6px">By Luke Erickson &middot; Updated August 2026</p>
         <div class="ds-prose" style="max-width:62ch">
-          <p>If you&rsquo;re building something in Ventura County and want someone in your corner, here is exactly how I mentor &mdash; and every free alternative in the county, honestly listed, because the right door matters more than my door.</p>
+          <p>If you&rsquo;re building something in Ventura County and want someone in your corner, here is how I mentor, along with the main free options in the county. The right door matters more than my door.</p>
+          <p class="page-cta__inline"><a class="ds-btn ds-btn--primary" href="/#contact">Request a coffee <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></p>
 
 <h2 class="ds-display" style="font-size:var(--text-h3);margin:34px 0 10px">How I mentor</h2>
           <p>Most of my mentoring runs through <a class="ds-link" href="https://startupventura.com" target="_blank" rel="noopener">Startup Ventura</a>, the 501(c)(3) tech accelerator I founded &mdash; founders in our orbit get mentorship, free software and credits, and connections to capital. I also mentor students at CSU Channel Islands, and I hold a standing rule for everyone else: you don&rsquo;t need a deck, a company, or a technical background to reach out. An idea is enough.</p>
@@ -672,7 +706,7 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <p>One honest limit: I can&rsquo;t mentor everyone one-on-one. The deepest way to work with me is through Startup Ventura&rsquo;s programs.</p>
 <h2 class="ds-display" style="font-size:var(--text-h3);margin:34px 0 10px">Free mentorship resources in Ventura County</h2>
           <p>Depending on what you&rsquo;re building, one of these may serve you better than I can &mdash; and they&rsquo;re all free or close to it:</p>
-          <p><strong>SCORE Ventura County</strong> &mdash; no-cost mentoring from a bench of 60+ volunteer mentors, most of them retired executives. Great for small-business fundamentals. <a class="ds-link" href="https://www.score.org/ventura" target="_blank" rel="noopener">score.org/ventura</a></p>
+          <p><strong>SCORE Ventura County</strong> &mdash; no-cost mentoring from a bench of 60+ volunteer mentors, most of them retired executives. Great for small-business fundamentals. <a class="ds-link" href="https://www.score.org/ca/ventura-county/" target="_blank" rel="noopener">score.org/ca/ventura-county</a></p>
           <p><strong>The SBDC hosted by the Economic Development Collaborative (EDC-VC)</strong> &mdash; free one-on-one advising from senior consultants, serving Ventura and Santa Barbara counties. Strong on loans, financials, and operations. <a class="ds-link" href="https://edcsbdc.org" target="_blank" rel="noopener">edcsbdc.org</a></p>
           <p><strong>Women&rsquo;s Economic Ventures (WEV)</strong> &mdash; multi-session business education, consulting, and loans up to $150,000, focused on women entrepreneurs. <a class="ds-link" href="https://wevonline.org" target="_blank" rel="noopener">wevonline.org</a></p>
 <h2 class="ds-display" style="font-size:var(--text-h3);margin:34px 0 10px">Which door should you knock on?</h2>
@@ -680,9 +714,16 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
           <p>Not sure where you fit? That&rsquo;s what the coffee is for. <a class="ds-link" href="/#contact">Say hello</a> and I&rsquo;ll point you at the right door, even when it isn&rsquo;t mine.</p>
 
         </div>
+        <div class="story__cta ds-card ds-card--glass page-cta">
+          <div>
+            <h2 class="ds-display" style="font-size:var(--text-display-md);margin:0 0 8px">Want to grab coffee?</h2>
+            <p class="ds-prose" style="margin:0;max-width:44ch">Tell me what you&rsquo;re building and what&rsquo;s in the way this month. If I&rsquo;m not the right person, I&rsquo;ll point you to someone who is.</p>
+          </div>
+          <a class="ds-btn ds-btn--primary ds-btn--lg" href="/#contact">Get in touch <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+        </div>
         <div class="ds-card kit-card" style="margin-top:44px">
           <h2 class="kit-label" style="margin-bottom:10px">Keep reading</h2>
-          <ul class="facts" style="gap:6px"><li><a class="ds-link" href="/guides/angel-investors-ventura-county">Angel investors in Ventura County: how founders actually raise here</a></li><li><a class="ds-link" href="/guides/start-a-nonprofit-in-your-20s">How to start a nonprofit in your 20s</a></li><li><a class="ds-link" href="/guides/join-a-board-in-your-20s">How to join a board in your 20s</a></li><li><a class="ds-link" href="/speaking">Book Luke to speak</a></li></ul>
+          <ul class="facts" style="gap:6px"><li><a class="ds-link" href="/guides/angel-investors-ventura-county/">Angel investors in Ventura County: how founders actually raise here</a></li><li><a class="ds-link" href="/guides/start-a-nonprofit-in-your-20s/">How to start a nonprofit in your 20s</a></li><li><a class="ds-link" href="/guides/join-a-board-in-your-20s/">How to join a board in your 20s</a></li><li><a class="ds-link" href="/speaking/">Book Luke to speak</a></li></ul>
         </div>
       </div>
     </section>
@@ -700,16 +741,16 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
         <span class="ds-wordmark__name">Luke Erickson</span>
       </a>
         <nav class="footer__nav" aria-label="Footer">
-          <a href="/about/me">My story</a>
-          <a href="/speaking">Speaking</a>
+          <a href="/about/me/">My story</a>
+          <a href="/speaking/">Speaking</a>
           <a href="/#guides">Guides</a>
-          <a href="/press">Press kit</a>
-          <a href="/resume">Resume</a>
+          <a href="/press/">Press kit</a>
+          <a href="/resume/">Resume</a>
           <a href="/#contact">Contact</a>
-          <a href="/privacy">Privacy</a>
+          <a href="/privacy/">Privacy</a>
         </nav>
         <div class="footer__meta">
-          <button class="motion-toggle" id="motionToggle" type="button" aria-label="Change motion level">Motion: rich</button>
+          <button class="motion-toggle" id="motionToggle" type="button" aria-label="Motion: full, change motion level">Motion: full</button>
           <span class="footer__copy">© <span id="year">2026</span> Luke Erickson</span>
         </div>
       </div>
