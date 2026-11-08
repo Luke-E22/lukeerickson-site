@@ -590,6 +590,20 @@ picture{display:contents;}
   a.contact__line{align-items:center;min-height:44px;}
   .seen-row a{display:inline-flex;align-items:center;min-height:44px;}
 }
+/* ---------------- Mobile homepage (2026-11-07, audit #1 and #2) ---------------- */
+/* Phones: eyebrow, name, tagline and button come before the photo */
+@media (max-width:880px){
+  .hero__media{order:0;margin-bottom:0;}
+}
+/* Phones: two-column gallery, captions under each photo instead of over it */
+@media (max-width:560px){
+  .gallery{columns:2;column-gap:10px;}
+  .gallery__item{margin-bottom:10px;}
+  .gallery__cap{position:static;opacity:1;transform:none;padding:8px 10px 10px;font-size:12px;line-height:1.35;color:var(--text-secondary);background:none;}
+}
+/* Mid-page "Get in touch" band after Speaking and the testimonials */
+.talk-band{margin-top:0;}
+.talk-band h2{max-width:20ch;}
 </style>
 
 <!-- Google Analytics (GA4) -->
