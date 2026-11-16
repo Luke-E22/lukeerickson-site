@@ -334,6 +334,7 @@
     var lineEl = box.querySelector('.reel-modal__line'), metaEl = box.querySelector('.reel-modal__meta');
     var fullEl = box.querySelector('.reel-modal__full'), closeBtn = box.querySelector('.reel-modal__close');
     var current = 0, opener = null;
+    fullEl.setAttribute('href', clips[0].getAttribute('data-full') || clips[0].getAttribute('href'));
 
     frame.addEventListener('load', function () { if (frame.getAttribute('src')) wrap.classList.remove('is-loading'); });
 
