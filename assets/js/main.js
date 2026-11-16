@@ -305,4 +305,89 @@
     box.addEventListener('click', function (e) { if (e.target === box || e.target === closeBtn) closeBox(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && box.classList.contains('is-open')) closeBox(); });
   })();
+  /* ---------- Clips row and player ---------- */
+  (function () {
+    var row = document.getElementById('clipsRow');
+    if (!row) return;
+    var clips = Array.prototype.slice.call(row.querySelectorAll('.clip'));
+    if (!clips.length) return;
+    var smooth = function () { return motion() === 'still' ? 'auto' : 'smooth'; };
+    function nudge(dir) { row.scrollBy({ left: dir * (clips[0].getBoundingClientRect().width + 14) * 2, behavior: smooth() }); }
+    var back = document.getElementById('clipsPrev'), fwd = document.getElementById('clipsNext');
+    if (back) back.addEventListener('click', function () { nudge(-1); });
+    if (fwd) fwd.addEventListener('click', function () { nudge(1); });
+
+    var arrow = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+    var box = document.createElement('div');
+    box.className = 'reel-modal';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-hidden', 'true');
+    box.setAttribute('aria-label', 'Video clip');
+    box.innerHTML = '<button class="reel-modal__close" type="button" aria-label="Close clip">&times;</button>' +
+      '<button class="reel-modal__nav reel-modal__nav--prev" type="button" aria-label="Previous clip">' + arrow + '</button>' +
+      '<div class="reel-modal__stage"><div class="reel-modal__frame is-loading"><span class="reel-modal__spin" aria-hidden="true"></span><iframe title="Video clip" allow="autoplay; encrypted-media; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe></div>' +
+      '<div class="reel-modal__info"><p class="reel-modal__line"></p><p class="reel-modal__meta"></p><div class="reel-modal__links"><a class="reel-modal__full" target="_blank" rel="noopener">Watch the full episode</a><a class="ds-btn ds-btn--primary reel-modal__contact" href="#contact">Get in touch</a></div></div></div>' +
+      '<button class="reel-modal__nav reel-modal__nav--next" type="button" aria-label="Next clip">' + arrow + '</button>';
+    document.body.appendChild(box);
+    var frame = box.querySelector('iframe'), wrap = box.querySelector('.reel-modal__frame');
+    var lineEl = box.querySelector('.reel-modal__line'), metaEl = box.querySelector('.reel-modal__meta');
+    var fullEl = box.querySelector('.reel-modal__full'), closeBtn = box.querySelector('.reel-modal__close');
+    var current = 0, opener = null;
+
+    frame.addEventListener('load', function () { if (frame.getAttribute('src')) wrap.classList.remove('is-loading'); });
+
+    function show(i) {
+      current = (i + clips.length) % clips.length;
+      var c = clips[current], code = c.getAttribute('data-reel');
+      wrap.classList.add('is-loading');
+      frame.setAttribute('src', 'https://www.instagram.com/reel/' + code + '/embed/');
+      frame.setAttribute('title', 'Video clip: ' + c.getAttribute('data-line'));
+      lineEl.innerHTML = c.getAttribute('data-line');
+      metaEl.innerHTML = c.getAttribute('data-meta');
+      var full = c.getAttribute('data-full');
+      fullEl.style.display = full ? '' : 'none';
+      if (full) fullEl.setAttribute('href', full);
+      gaTrack('clip_play', { clip: code, position: current + 1 });
+    }
+    function open(i, el) {
+      opener = el;
+      box.classList.add('is-open');
+      box.setAttribute('aria-hidden', 'false');
+      document.documentElement.style.overflow = 'hidden';
+      show(i);
+      closeBtn.focus();
+    }
+    function close() {
+      box.classList.remove('is-open');
+      box.setAttribute('aria-hidden', 'true');
+      document.documentElement.style.overflow = '';
+      frame.removeAttribute('src');
+      if (opener) opener.focus();
+    }
+    clips.forEach(function (c, i) {
+      c.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+        e.preventDefault();
+        open(i, c);
+      });
+    });
+    box.querySelector('.reel-modal__nav--prev').addEventListener('click', function () { show(current - 1); });
+    box.querySelector('.reel-modal__nav--next').addEventListener('click', function () { show(current + 1); });
+    closeBtn.addEventListener('click', close);
+    box.querySelector('.reel-modal__contact').addEventListener('click', close);
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!box.classList.contains('is-open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(current - 1);
+      else if (e.key === 'ArrowRight') show(current + 1);
+      else if (e.key === 'Tab') {
+        var f = Array.prototype.filter.call(box.querySelectorAll('button, a[href], iframe'), function (n) { return n.offsetParent !== null; });
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+  })();
 })();

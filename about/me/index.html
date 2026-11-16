@@ -618,6 +618,81 @@ picture{display:contents;}
 /* Mid-page "Get in touch" band after Speaking and the testimonials */
 .talk-band{margin-top:0;}
 .talk-band h2{max-width:20ch;}
+
+/* ---------------- Clips row and player (2026-11-09) ---------------- */
+.clips__head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:22px;}
+.clips__head h2{margin:10px 0 0;}
+.clips__arrows{display:none;gap:10px;flex:none;}
+.clips__arrow--back svg{transform:rotate(180deg);}
+.clips__row{--edge:max(clamp(20px,5vw,48px),calc((100vw - 1180px)/2 + clamp(20px,5vw,48px)));display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-inline:var(--edge);padding:6px var(--edge) 10px;scrollbar-width:none;}
+.clips__row::-webkit-scrollbar{display:none;}
+.clip{position:relative;flex:0 0 clamp(205px,58vw,250px);aspect-ratio:9/16;border-radius:var(--radius-lg);overflow:hidden;scroll-snap-align:start;display:block;background:var(--color-surface-sunken);box-shadow:var(--shadow-md);color:#fff;text-decoration:none;}
+.clip picture,.clip img{position:absolute;inset:0;width:100%;height:100%;}
+.clip img{object-fit:cover;transition:transform .6s var(--ease-out);}
+.clip:hover img,.clip:focus-visible img{transform:scale(1.04);}
+.clip:focus-visible{outline:none;box-shadow:var(--shadow-md),var(--ring-focus);}
+.clip__shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,11,16,.94) 8%,rgba(8,11,16,.72) 38%,rgba(8,11,16,0) 66%);}
+.clip__play{position:absolute;top:12px;right:12px;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.94);color:#10141a;}
+.clip__body{position:absolute;left:16px;right:16px;bottom:15px;display:flex;flex-direction:column;gap:9px;}
+.clip__line{font-family:var(--font-display);font-size:21px;line-height:1.2;letter-spacing:-.005em;text-wrap:pretty;}
+.clip__meta{font-family:var(--font-sans);font-size:12.5px;font-weight:600;color:rgba(255,255,255,.82);}
+@media (hover:hover) and (min-width:881px){.clips__arrows{display:flex;}}
+.reel-modal{position:fixed;inset:0;z-index:210;display:none;align-items:center;justify-content:center;gap:clamp(10px,2vw,28px);padding:clamp(8px,2vw,28px);background:rgba(8,11,16,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+.reel-modal.is-open{display:flex;}
+.reel-modal__stage{display:flex;align-items:center;gap:32px;max-height:100%;}
+.reel-modal__frame{position:relative;width:min(400px,calc(100vw - 16px));height:min(780px,calc(100dvh - 56px));border-radius:var(--radius-md);overflow:hidden;background:#000;}
+.reel-modal__frame iframe{position:relative;display:block;width:100%;height:100%;border:0;}
+.reel-modal__spin{position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:3px solid rgba(255,255,255,.25);border-top-color:#fff;animation:reelSpin .9s linear infinite;}
+.reel-modal__frame:not(.is-loading) .reel-modal__spin{display:none;}
+@keyframes reelSpin{to{transform:rotate(360deg);}}
+.reel-modal__info{width:300px;color:#fff;display:flex;flex-direction:column;align-items:flex-start;gap:14px;}
+.reel-modal__line{margin:0;font-family:var(--font-display);font-size:30px;line-height:1.16;}
+.reel-modal__meta{margin:0;font-family:var(--font-sans);font-size:14px;color:rgba(255,255,255,.78);}
+.reel-modal__links{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:6px;}
+.reel-modal__full{color:#fff;font-family:var(--font-sans);font-size:15px;font-weight:600;min-height:44px;display:inline-flex;align-items:center;}
+.reel-modal__close,.reel-modal__nav{display:grid;place-items:center;width:46px;height:46px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:28px;line-height:1;cursor:pointer;flex:none;}
+.reel-modal__close:hover,.reel-modal__nav:hover{background:rgba(255,255,255,.26);}
+.reel-modal__close:focus-visible,.reel-modal__nav:focus-visible{outline:2px solid #fff;outline-offset:2px;}
+.reel-modal__close{position:absolute;top:14px;right:14px;z-index:2;}
+.reel-modal__nav svg{width:20px;height:20px;}
+.reel-modal__nav--prev svg{transform:rotate(180deg);}
+@media (max-width:880px){
+  .reel-modal{padding:0;}
+  .reel-modal__stage{flex-direction:column;gap:0;width:100%;height:100%;}
+  .reel-modal__frame{width:100%;height:auto;flex:1 1 auto;border-radius:0;}
+  .reel-modal__info{display:none;}
+  .reel-modal__nav{position:absolute;bottom:14px;z-index:2;background:rgba(20,24,30,.82);}
+  .reel-modal__nav--prev{left:14px;}
+  .reel-modal__nav--next{right:14px;}
+  .reel-modal__close{background:rgba(20,24,30,.82);}
+}
+/* Shorter homepage */
+.press__also{margin:24px 0 0;text-align:center;font-size:15.5px;color:var(--text-secondary);}
+.guide-list{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 36px;}
+.guide-list a{display:block;padding:14px 0;border-top:1px solid var(--color-border);color:inherit;text-decoration:none;}
+.guide-list b{display:block;font-family:var(--font-sans);font-size:16.5px;font-weight:600;color:var(--text-primary);}
+.guide-list span{display:block;margin-top:3px;font-size:14.5px;color:var(--text-secondary);}
+.guide-list a:hover b{color:var(--accent-blue-ink);}
+@media (max-width:760px){.guide-list{grid-template-columns:1fr;}}
+@media (max-width:840px){
+  .give-card{padding:18px 20px;}
+  .give-card .ds-btn--link{display:none;}
+  .speak__block:first-child{display:none;}
+}
+@media (max-width:880px){
+  #about .about__photo{display:none;}
+  #about .about__grid{gap:0;}
+  .press__card--wide .press__quote{display:none;}
+  .sv-card > div + div{display:none;}
+  .reel-modal__close{top:auto;bottom:14px;right:auto;left:50%;margin-left:-23px;}
+}
+@media (max-width:840px){
+  #philanthropy .kit-grid{grid-template-columns:1fr 1fr;gap:10px;}
+  #philanthropy .give-card{padding:15px 14px;}
+  #philanthropy .kit-label{font-size:10.5px;padding-right:0;}
+  #philanthropy .talk__title{font-size:18px;}
+  #philanthropy .talk__abs{font-size:14px;line-height:1.45;}
+}
 </style>
 
 <link rel="icon" type="image/svg+xml" href="/assets/logo/LE-monogram.svg" />
@@ -705,6 +780,13 @@ picture{display:contents;}
           "url": "https://open.spotify.com/episode/2ukvJkEWd2yvsWrbD0j6oQ",
           "datePublished": "2026-08-07",
           "partOfSeries": { "@type": "PodcastSeries", "name": "Joe Knows Ventura" }
+        },
+        {
+          "@type": "PodcastEpisode",
+          "name": "How to Raise Money for Your Business (What Investors Really Want)",
+          "url": "https://www.youtube.com/watch?v=du8KrOPdTkY",
+          "datePublished": "2026-10-15",
+          "partOfSeries": { "@type": "PodcastSeries", "name": "Conejo Valley Visionaries" }
         },
         {
           "@type": "PodcastEpisode",
@@ -877,6 +959,30 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
         <p class="story__back"><a class="ds-btn ds-btn--link" href="/resume/">See the full r&eacute;sum&eacute; <span class="ds-btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></p>
       </div>
     </article>
+    <section class="section section--tight" id="moments">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="ds-eyebrow ds-eyebrow--line">In the arena</span>
+          <h2 class="ds-display" style="font-size:var(--text-display-md)">A few moments along the way.</h2>
+        </div>
+        <div class="gallery reveal">
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-boys-girls-club-400.avif 400w, /assets/img/gallery/luke-erickson-boys-girls-club-800.avif 800w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-boys-girls-club-400.webp 400w, /assets/img/gallery/luke-erickson-boys-girls-club-800.webp 800w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-boys-girls-club.jpg" width="1200" height="681" alt="Luke Erickson with students after teaching an entrepreneurship class at the Boys &amp; Girls Club of Greater Ventura" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Teaching entrepreneurship · Boys &amp; Girls Club of Greater Ventura</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-vccu-grant-400.avif 400w, /assets/img/gallery/luke-erickson-vccu-grant-800.avif 800w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-vccu-grant-400.webp 400w, /assets/img/gallery/luke-erickson-vccu-grant-800.webp 800w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-vccu-grant.jpg" width="1200" height="900" alt="Luke Erickson accepting a $10,000 grant check for Startup Ventura from The Foundation of VCCU" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">$10,000 grant for Startup Ventura · The Foundation of VCCU</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-popl-nasdaq-400.avif 400w, /assets/img/gallery/luke-erickson-popl-nasdaq-665.avif 665w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-popl-nasdaq-400.webp 400w, /assets/img/gallery/luke-erickson-popl-nasdaq-665.webp 665w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-popl-nasdaq.jpg" width="665" height="1182" alt="Luke Erickson at Nasdaq, Times Square" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Popl's global rebrand · Nasdaq, Times Square</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-grant-cardone-400.avif 400w, /assets/img/gallery/luke-erickson-grant-cardone-800.avif 800w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-grant-cardone-400.webp 400w, /assets/img/gallery/luke-erickson-grant-cardone-800.webp 800w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-grant-cardone.jpg" width="960" height="1200" alt="Luke Erickson with Grant Cardone" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">With Grant Cardone</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-speaking-400.avif 400w, /assets/img/gallery/luke-erickson-speaking-800.avif 800w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-speaking-400.webp 400w, /assets/img/gallery/luke-erickson-speaking-800.webp 800w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-speaking.jpg" width="800" height="1200" alt="Luke Erickson speaking" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">On the mic</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-new-west-symphony-400.avif 400w, /assets/img/gallery/luke-erickson-new-west-symphony-800.avif 800w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-new-west-symphony-400.webp 400w, /assets/img/gallery/luke-erickson-new-west-symphony-800.webp 800w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-new-west-symphony.jpg" width="1200" height="900" alt="Luke Erickson at a New West Symphony gala" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">New West Symphony gala</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-forbes-la-tech-week-400.avif 400w, /assets/img/gallery/luke-erickson-forbes-la-tech-week-800.avif 800w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-forbes-la-tech-week-400.webp 400w, /assets/img/gallery/luke-erickson-forbes-la-tech-week-800.webp 800w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-forbes-la-tech-week.jpg" width="900" height="1200" alt="Luke Erickson at LA Tech Week" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Forbes 30 Under 30 Summit · LA Tech Week</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-capitol-hill-400.avif 400w, /assets/img/gallery/luke-erickson-capitol-hill-800.avif 800w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-capitol-hill-400.webp 400w, /assets/img/gallery/luke-erickson-capitol-hill-800.webp 800w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-capitol-hill.jpg" width="900" height="1200" alt="Luke Erickson on Capitol Hill, Washington, D.C." loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">On Capitol Hill · Washington, D.C.</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-ces-las-vegas-400.avif 400w, /assets/img/gallery/luke-erickson-ces-las-vegas-768.avif 768w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-ces-las-vegas-400.webp 400w, /assets/img/gallery/luke-erickson-ces-las-vegas-768.webp 768w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-ces-las-vegas.jpg" width="768" height="1024" alt="Luke Erickson at CES, Las Vegas" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">CES · Las Vegas</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-leadership-institute-400.avif 400w, /assets/img/gallery/luke-erickson-leadership-institute-800.avif 800w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-leadership-institute-400.webp 400w, /assets/img/gallery/luke-erickson-leadership-institute-800.webp 800w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-leadership-institute.jpg" width="1086" height="724" alt="Luke Erickson at the Leadership Institute, Washington, D.C." loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Leadership Institute · Washington, D.C.</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-rotary-400.avif 400w, /assets/img/gallery/luke-erickson-rotary-768.avif 768w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-rotary-400.webp 400w, /assets/img/gallery/luke-erickson-rotary-768.webp 768w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-rotary.jpg" width="768" height="1024" alt="Luke Erickson at Rotary Club of Ventura" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Rookie Rotarian of the Year · 2025</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-outdoors-400.avif 400w, /assets/img/gallery/luke-erickson-outdoors-800.avif 800w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-outdoors-400.webp 400w, /assets/img/gallery/luke-erickson-outdoors-800.webp 800w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-outdoors.jpg" width="1200" height="1200" alt="Luke Erickson outdoors" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Off the clock</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-spacex-400.avif 400w, /assets/img/gallery/luke-erickson-spacex-768.avif 768w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-spacex-400.webp 400w, /assets/img/gallery/luke-erickson-spacex-768.webp 768w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-spacex.jpg" width="768" height="1024" alt="Luke Erickson at SpaceX, Hawthorne" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">SpaceX · Hawthorne</figcaption></figure>
+          <figure class="gallery__item" tabindex="0"><picture><source type="image/avif" srcset="/assets/img/gallery/luke-erickson-spartan-race-400.avif 400w, /assets/img/gallery/luke-erickson-spartan-race-799.avif 799w" sizes="(max-width:900px) 50vw, 33vw"><source type="image/webp" srcset="/assets/img/gallery/luke-erickson-spartan-race-400.webp 400w, /assets/img/gallery/luke-erickson-spartan-race-799.webp 799w" sizes="(max-width:900px) 50vw, 33vw"><img src="/assets/img/gallery/luke-erickson-spartan-race.jpg" width="799" height="1200" alt="Luke Erickson at a Spartan Race, Angel Stadium" loading="lazy" decoding="async" /></picture><figcaption class="gallery__cap">Spartan Race · Angel Stadium</figcaption></figure>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -891,8 +997,8 @@ if(document.readyState==='complete'){setTimeout(go,1200);}else{window.addEventLi
         </a>
         <nav class="footer__nav" aria-label="Footer">
           <a href="/about/me/">My story</a>
-          <a href="/#experience">Experience</a>
-          <a href="/#moments">Moments</a>
+          <a href="/resume/">Experience</a>
+          <a href="/about/me/#moments">Moments</a>
           <a href="/speaking/">Speaking</a>
           <a href="/#guides">Guides</a>
           <a href="/press/">Press kit</a>
